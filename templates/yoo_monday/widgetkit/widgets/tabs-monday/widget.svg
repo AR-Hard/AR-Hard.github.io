@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-tabs-monday" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+<rect x="7" y="19" fill="#D85549" width="12" height="2"/>
+<rect x="7" y="23" fill="#D85549" width="10" height="2"/>
+<rect x="27" y="10" fill="#D85549" width="6" height="2"/>
+<path fill="#D85549" d="M37,5H3v31h34V5z M37,21V7h-2v27h-8h-2H5V7h30v12"/>
+<path fill="#D85549" d="M36.844,17H23.156V6h13.688V17z M25.156,15H35V7h-9.844V15z"/>
+<rect x="27" y="20" fill="#D85549" width="6" height="2"/>
+<rect x="26.999" y="25" fill="#D85549" width="6" height="2"/>
+<rect x="27" y="30" fill="#D85549" width="6" height="2"/>
+</svg>

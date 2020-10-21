@@ -1,0 +1,80 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Dropdown component
+//
+// ===========================================================================
+
+// Variables
+// ========================================================================
+
+@dropdown-z-index:                          (@global-z-index + 20);
+@dropdown-padding:                          20px;
+@dropdown-background:                       @global-background;
+@dropdown-color:                            @global-color;
+@dropdown-divider-border:                   @global-border;
+@dropdown-navbar-margin:                    10px;
+@dropdown-navbar-background:                @global-background;
+@dropdown-navbar-color:                     @global-color;
+
+//
+// New
+//
+
+@dropdown-border-width:                     @global-small-border-width;
+@dropdown-border:                           @global-border;
+@dropdown-navbar-border-width:              @dropdown-border-width;
+@dropdown-divider-border-width:             @global-small-border-width;
+@dropdown-divider-border-style:             solid;
+
+
+// Component
+// ===========================================================================
+
+.hook-dropdown() {
+    padding: @dropdown-padding;
+    border: @dropdown-border-width solid @dropdown-border;
+    border-radius: @global-border-radius;
+}
+
+
+// Modifier: `uk-dropdown-navbar`
+// ===========================================================================
+
+.hook-dropdown-navbar() {
+    border: @dropdown-navbar-border-width solid @dropdown-border;
+    border-radius: @global-border-radius;
+    font-size: @global-font-size - 1px;
+    line-height: @global-line-height - 2px;
+}
+
+
+// Miscellaneous
+// ===========================================================================
+
+.hook-dropdown-misc() {
+
+    /* Grid and panel in dropdown
+     =================================================================== */
+
+    /*
+     * Column divider
+     */
+
+    .uk-dropdown:not(.uk-dropdown-stack) > .uk-grid > [class*='uk-width-']:nth-child(n+2) {
+        border-left-width: @dropdown-divider-border-width;
+        border-left-style: @dropdown-divider-border-style;
+    }
+
+    /* Dependencies `uk-nav-dropdown`
+     =================================================================== */
+
+    .uk-dropdown .uk-nav-dropdown,
+    .uk-dropdown .uk-nav-navbar { padding: 5px @dropdown-padding; }
+
+    /* Modifier `uk-dropdown-small`
+     =================================================================== */
+
+    .uk-dropdown-small { padding: (@dropdown-small-padding + 10px) @dropdown-small-padding; }
+
+}

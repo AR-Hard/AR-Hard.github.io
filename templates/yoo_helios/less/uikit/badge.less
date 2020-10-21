@@ -1,0 +1,58 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Badge
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@badge-background:                              @global-primary-background;
+@badge-padding-horizontal:                      8px;
+@badge-font-size:                               12px;
+@badge-font-weight:                             @global-font-weight;
+@badge-line-height:                             20px;
+@badge-text-transform:                          uppercase;
+
+@badge-color:                                   @global-contrast-color;
+@badge-hover-color:                             @global-contrast-color;
+
+@badge-notification-font-size:                  12px;
+@badge-notification-line-height:                20px;
+
+@badge-success-background:                      @global-success-background;
+@badge-warning-background:                      @global-warning-background;
+@badge-danger-background:                       @global-danger-background;
+
+//
+// New
+//
+
+@badge-border-radius:                           (@badge-line-height / 2);
+@badge-text-shadow:                             @global-text-shadow;
+@badge-success-color:                           @global-contrast-color;
+@badge-warning-color:                           @global-contrast-color;
+@badge-danger-color:                            @global-contrast-color;
+
+
+// Component
+// ========================================================================
+
+.hook-badge() {
+    border-radius: @badge-border-radius;
+    text-shadow: 1px 1px 1px @badge-text-shadow;
+}
+
+.hook-badge-success() { color: @badge-success-color; }
+
+.hook-badge-warning() { color: @badge-warning-color; }
+
+.hook-badge-danger() { color: @badge-danger-color; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-badge-misc() {}

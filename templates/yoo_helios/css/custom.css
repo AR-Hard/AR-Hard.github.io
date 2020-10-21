@@ -1,0 +1,37 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/* ========================================================================
+   Use this file to add custom CSS easily
+ ========================================================================== */
+
+/* Logo color */
+[class*='tm-logo'] svg path,
+[class*='tm-logo'] path,
+[class*='tm-logo'] rect { fill: #c3cce8; }
+
+body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) [class*='tm-logo'] svg path,
+body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached)[class*='tm-logo'] path,
+body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) [class*='tm-logo'] rect { fill: #fff; }
+
+/* Background image in layout position bottom-e */
+.tm-block-bottom-e > div {
+    background-image: url(../images/custom/image_default.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+}
+
+/* SVG fill color for layout position bottom-e */
+.tm-block-bottom-e .uk-panel .uk-panel svg path,
+.tm-block-bottom-e .uk-panel .uk-panel path {
+    fill: #c3cce8;
+    opacity: 0.3;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.tm-block-bottom-e .uk-panel .uk-panel:hover svg path,
+.tm-block-bottom-e .uk-panel .uk-panel:hover path { opacity: 1; }
+
+/* WordPress Pagination */
+.home.tm-article-blog .uk-pagination { display: none; }

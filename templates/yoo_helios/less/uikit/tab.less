@@ -1,0 +1,228 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Tab
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@tab-padding-horizontal:                        12px;
+@tab-padding-vertical:                          8px;
+@tab-margin-horizontal:                         5px;
+@tab-margin-vertical:                           5px;
+
+@tab-border-width:                              1px;
+
+@tab-border:                                    @global-border;
+@tab-background:                                @global-background;
+@tab-color:                                     @global-color;
+@tab-hover-border:                              @tab-border;
+@tab-hover-background:                          @tab-background;
+@tab-hover-color:                               @global-highlight-color;
+@tab-active-border:                             @global-border;
+@tab-active-background:                         @global-background;
+@tab-active-color:                              @global-link-color;
+@tab-disabled-color:                            @global-muted-color;
+
+//
+// New
+//
+
+@tab-border-radius:                             @global-border-radius;
+@tab-disabled-border:                           rgba(0,0,0,0);
+
+@tab-font-size:                                 13px;
+@tab-text-transform:                            @global-text-transform;
+@tab-letter-spacing:                            @global-letter-spacing;
+
+@tab-onclick-color:                             @global-primary-color;
+
+@tab-before-height:                             0;
+@tab-before-background:                         @tab-border;
+@tab-before-hover-height:                       3px;
+@tab-before-hover-background:                   @global-highlight-background;
+@tab-before-onclick-background:                 @global-primary-background;
+@tab-before-active-background:                  @global-primary-background;
+@tab-before-animation-delay:                    0.2s;
+
+@tab-gradient-top:                              @global-primary-gradient-top;
+@tab-gradient-bottom:                           @global-primary-gradient-bottom;
+
+
+// Component
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-tab() {
+
+    position: relative;
+    border-radius: @tab-border-radius @tab-border-radius 0 0;
+    border: @tab-border-width solid @tab-border;
+    font-size: @tab-font-size;
+    text-transform: @tab-text-transform;
+    letter-spacing: @tab-letter-spacing;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -@tab-border-width;
+        right: -@tab-border-width;
+        left: -@tab-border-width;
+        height: @tab-before-height;
+        background: @tab-before-background;
+        -webkit-transition: all @tab-before-animation-delay;
+        transition: all @tab-before-animation-delay;
+    }
+
+}
+
+// Hover
+.hook-tab-hover() {
+
+    &::before {
+        height: @tab-before-hover-height;
+        background: @tab-before-hover-background;
+    }
+
+}
+
+// Active
+.hook-tab-active() {
+
+    &::before {
+        height: @tab-before-hover-height;
+        background-image: -webkit-linear-gradient(left, @tab-gradient-top, @tab-gradient-bottom);
+        background-image: linear-gradient(to right, @tab-gradient-top, @tab-gradient-bottom);
+        background-color: @tab-before-active-background;
+    }
+
+}
+
+// Disabled
+.hook-tab-disabled() {
+
+    border-color: @tab-disabled-border;
+
+    &::before { display: none; }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-tab-misc() {
+
+    // onclick event
+    .uk-tab > li > a:active {
+
+        color: @tab-onclick-color;
+
+        &::before {
+            height: @tab-before-hover-height;
+            background: @tab-before-onclick-background;
+        }
+
+    }
+
+    // Modifier: `uk-tab-bottom'
+    .uk-tab-bottom > li > a {
+
+        border-radius: 0 0 @tab-border-radius @tab-border-radius;
+
+        &::before {
+            top: auto;
+            bottom: -@tab-border-width;
+        }
+
+    }
+
+
+    // Modifier: `uk-tab-left', `uk-tab-right'
+
+    // Tablet and bigger
+    @media (min-width: @breakpoint-medium) {
+
+        // Modifier: `uk-tab-left'
+        .uk-tab-left > li {
+
+            > a {
+
+                border-radius: @tab-border-radius 0 0 @tab-border-radius;
+
+                &::before {
+                    right: auto;
+                    left: -@tab-border-width;
+                }
+
+            }
+
+        }
+
+        // Modifier: `uk-tab-right'
+        .uk-tab-right > li {
+
+            > a {
+
+                border-radius: 0 @tab-border-radius @tab-border-radius 0;
+
+                &::before {
+                    right: -@tab-border-width;
+                    left: auto;
+                }
+
+            }
+
+        }
+
+        // Modifier: `uk-tab-left' and `uk-tab-right'
+        .uk-tab-left > li,
+        .uk-tab-right > li {
+
+            > a {
+
+                &::before {
+                    top: -@tab-border-width;
+                    bottom: -@tab-border-width;
+                    height: (@global-line-height + (@tab-padding-vertical * 2));
+                    width: @tab-before-height;
+                }
+
+                &:hover {
+
+                    &::before {
+                        width: @tab-before-hover-height;
+                        height: (@global-line-height + (@tab-padding-vertical * 2));
+                    }
+
+                }
+
+            }
+
+            &.uk-active {
+
+                > a {
+
+                    &::before {
+                        width: @tab-before-hover-height;
+                        height: (@global-line-height + (@tab-padding-vertical * 2));
+                        background-image: -webkit-linear-gradient(top, @tab-gradient-top, @tab-gradient-bottom);
+                        background-image: linear-gradient(to bottom, @tab-gradient-top, @tab-gradient-bottom);
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

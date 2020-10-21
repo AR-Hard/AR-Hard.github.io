@@ -1,0 +1,178 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Navbar
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@navbar-nav-padding-horizontal:                 20px;
+
+@navbar-background:                             rgba(0,0,0,0);
+@navbar-color:                                  @global-color;
+@navbar-link-color:                             @global-link-color;
+@navbar-link-hover-color:                       @global-link-hover-color;
+
+@navbar-nav-height:                             40px;
+@navbar-nav-line-height:                        (@navbar-nav-height - @navbar-nav-before-height);
+@navbar-nav-font-size:                          14px;
+@navbar-nav-font-weight:                        @global-font-weight;
+@navbar-nav-font-family:                        'Roboto', Helvetica, Arial, sans-serif;
+@navbar-nav-color:                              fade(@global-highlight-color, 50%);
+@navbar-nav-hover-background:                   rgba(0,0,0,0);
+@navbar-nav-hover-color:                        @global-highlight-color;
+@navbar-nav-onclick-background:                 rgba(0,0,0,0);
+@navbar-nav-onclick-color:                      fade(@global-highlight-color, 70%);
+@navbar-nav-active-background:                  rgba(0,0,0,0);
+@navbar-nav-active-color:                       @global-highlight-color;
+@navbar-nav-subtitle-font-size:                 10px;
+@navbar-nav-subtitle-offset:                    2px;
+
+@navbar-brand-font-size:                        24px;
+@navbar-brand-color:                            @global-highlight-color;
+@navbar-brand-hover-color:                      fade(@global-highlight-color, 80%);
+
+@navbar-toggle-font-size:                       16px;
+@navbar-toggle-color:                           fade(@global-highlight-color, 50%);
+@navbar-toggle-hover-color:                     @global-highlight-color;
+@navbar-toggle-icon:                            "\e607";
+@navbar-toggle-icon-alt:                        "\e605";
+
+//
+// New
+//
+
+@navbar-brand-text-transform:                   @global-text-transform;
+@navbar-brand-letter-spacing:                   @global-letter-spacing;
+
+@navbar-nav-text-shadow:                        @global-text-shadow;
+@navbar-nav-text-transform:                     @global-text-transform;
+@navbar-nav-letter-spacing:                     @global-letter-spacing;
+@navbar-nav-animation-delay:                    0.35s;
+
+@navbar-nav-before-height:                      4px;
+@navbar-nav-before-background:                  rgba(0,0,0,0);
+@navbar-nav-before-hover-background:            @global-highlight-background;
+@navbar-nav-before-onclick-background:          @global-primary-background;
+@navbar-nav-before-active-background:           @global-primary-background;
+@navbar-nav-before-active-gradient-top:         @global-primary-gradient-top;
+@navbar-nav-before-active-gradient-bottom:      @global-primary-gradient-bottom;
+@navbar-nav-before-animation-delay:             0.2s;
+
+@navbar-nav-dropdown-subtitle-color:            fade(@navbar-nav-color, 40%);
+
+
+// Component
+// ========================================================================
+
+.hook-navbar() {}
+
+
+// Sub-object: `uk-navbar-nav`
+// ========================================================================
+
+.hook-navbar-nav() {
+
+    position: relative;
+    padding: @navbar-nav-before-height @navbar-nav-padding-horizontal 0 @navbar-nav-padding-horizontal;
+    text-shadow: 1px 1px 1px @navbar-nav-text-shadow;
+    text-transform: @navbar-nav-text-transform;
+    text-align: center;
+    letter-spacing: @navbar-nav-letter-spacing;
+    -webkit-transform: translate3d(0,0,0);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: @navbar-nav-before-height;
+        background: @navbar-nav-before-background;
+        opacity: 0;
+        -webkit-transition: opacity @navbar-nav-animation-delay, -webkit-transform @navbar-nav-animation-delay;
+        transition: opacity @navbar-nav-animation-delay, transform @navbar-nav-animation-delay;
+        -webkit-transform: scale(0,1);
+        transform: scale(0,1);
+    }
+
+}
+
+// Hover
+.hook-navbar-nav-hover() {
+
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        background: @navbar-nav-before-hover-background;
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+}
+
+// OnClick
+.hook-navbar-nav-onclick() {
+
+    -webkit-transition: color @navbar-nav-animation-delay;
+    transition: @navbar-nav-animation-delay;
+
+    &::before {
+        opacity: 1;
+        left: 15px;
+        right: 15px;
+        background: @navbar-nav-before-onclick-background;
+        -webkit-transition: opacity 0.15s, right 0.1s, left 0.1s, background 0.15s;
+        transition: opacity 0.15s, right 0.1s, left 0.1s, background 0.15s;
+    }
+
+}
+
+// Active
+.hook-navbar-nav-active() {
+
+    &::before {
+        background-image: -webkit-linear-gradient(left, @navbar-nav-before-active-gradient-top, @navbar-nav-before-active-gradient-bottom);
+        background-image: linear-gradient(to right, @navbar-nav-before-active-gradient-top, @navbar-nav-before-active-gradient-bottom);
+        background-color: @navbar-nav-before-active-background;
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+}
+
+
+// Sub-object: `uk-navbar-content`
+// ========================================================================
+
+.hook-navbar-content() { margin-top: -1px; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-navbar-misc() {
+
+    // Brand
+    .uk-navbar-brand {
+        line-height: (@navbar-nav-line-height + @navbar-nav-before-height);
+        text-transform: @navbar-brand-text-transform;
+        letter-spacing: @navbar-brand-letter-spacing;
+    }
+
+    // Toggler
+    .uk-navbar-toggle:after { font-family: 'Helios'; }
+
+    // Subtitle in uk-nav-navbar dropdown
+    .uk-nav-navbar > li > a > div {
+        margin-top: -5px;
+        font-size: @navbar-nav-subtitle-font-size;
+    }
+
+}

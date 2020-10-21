@@ -1,0 +1,164 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Base
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@base-body-background:                          @global-background;
+@base-body-font-family:                         @global-font-family;
+@base-body-font-weight:                         @global-font-weight;
+@base-body-font-size:                           @global-font-size;
+@base-body-line-height:                         @global-line-height;
+@base-body-color:                               @global-color;
+
+@base-link-color:                               @global-link-color;
+@base-link-hover-text-decoration:               none;
+@base-link-hover-color:                         @global-link-hover-color;
+
+@base-code-color:                               @global-muted-color;
+@base-ins-color:                                @global-contrast-color;
+@base-ins-background:                           lighten(@global-primary-background, 10%);
+@base-mark-color:                               @global-contrast-color;
+@base-mark-background:                          lighten(@global-primary-background, 10%);
+
+@base-margin-vertical:                          @global-margin;
+
+@base-heading-font-family:                      @global-font-family;
+@base-heading-font-weight:                      @global-font-weight;
+@base-heading-text-transform:                   none;
+
+@base-heading-color:                            @global-color;
+@base-heading-margin-top:                       @global-margin-large;
+@base-h1-font-size:                             round((@global-font-size * 3.333)); // 50px
+@base-h1-line-height:                           round((@base-h1-font-size * 1.1)); // 55px
+@base-h2-font-size:                             round((@global-font-size * 2.466)); // 37px
+@base-h2-line-height:                           round((@base-h2-font-size * 1.189)); // 44px
+@base-h3-font-size:                             round((@global-font-size * 1.86)); // 28px
+@base-h3-line-height:                           round((@base-h3-font-size * 1.35)); // 38px
+@base-h4-font-size:                             round((@global-font-size * 1.533)); // 23px
+@base-h4-line-height:                           round((@base-h4-font-size * 1.173)); // 27px
+@base-h5-font-size:                             round((@global-font-size * 1.333)); // 20px
+@base-h5-line-height:                           round((@base-h5-font-size * 1.3)); // 26px
+@base-h6-font-size:                             round((@global-font-size * 1.13)); // 17px
+@base-h6-line-height:                           round((@base-h6-font-size * 1.35)); // 23px
+
+@base-hr-border:                                @global-border;
+
+@base-blockquote-padding-left:                  0;
+@base-blockquote-font-size:                     round((@global-font-size * 1.26)); // 19px
+@base-blockquote-line-height:                   round((@base-blockquote-font-size * 1.736)); // 33px
+@base-blockquote-border:                        rgba(0,0,0,0);
+@base-blockquote-border-width:                  0;
+@base-blockquote-font-style:                    italic;
+
+@base-code-font-size:                           round((@global-font-size * 0.85)); // 12px
+
+@base-pre-background:                           @global-muted-background;
+@base-pre-color:                                @global-color;
+@base-pre-font-size:                            round((@global-font-size * 0.85)); // 12px
+@base-pre-line-height:                          round((@base-pre-font-size * 1.46)); // 18px
+
+@base-selection-background:                     lighten(@global-primary-background, 10%);
+@base-selection-color:                          @global-contrast-color;
+
+//
+// New
+//
+
+@base-blockquote-color:                         @global-color;
+@base-blockquote-font-weight:                   300;
+@base-blockquote-font-family:                   'Lato';
+@base-blockquote-font-style:                    italic;
+
+@base-link-focus-text-decoration:               none;
+
+// Body
+// ========================================================================
+
+.hook-base-body() {}
+
+
+// Links
+// ========================================================================
+
+.hook-base-link() {
+
+    &:focus { text-decoration: @base-link-focus-text-decoration; }
+
+}
+
+.hook-base-link-hover() {}
+
+
+// Text-level semantics
+// ========================================================================
+
+.hook-base-code() {}
+
+
+// Headings
+// ========================================================================
+
+.hook-base-h1() {
+
+    @media (max-width: @breakpoint-medium) {
+        font-size: @base-h2-font-size;
+        line-height: @base-h2-line-height;
+    }
+
+}
+
+.hook-base-h2() {
+
+    @media (max-width: @breakpoint-medium) {
+        font-size: @base-h3-font-size;
+        line-height: @base-h3-line-height;
+    }
+
+}
+
+.hook-base-h3() {}
+
+.hook-base-h4() {}
+
+.hook-base-h5() {}
+
+.hook-base-h6() {}
+
+
+// Horizontal rules
+// ========================================================================
+
+.hook-base-hr() {}
+
+
+// Blockquotes
+// ========================================================================
+
+.hook-base-blockquote() {}
+
+
+// Preformatted text
+// ========================================================================
+
+.hook-base-pre() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-base-misc() {
+
+    blockquote {
+        font-weight: @base-blockquote-font-weight;
+        font-family: @base-blockquote-font-family;
+        font-style: @base-blockquote-font-style;
+        color: @base-blockquote-color;
+    }
+
+}

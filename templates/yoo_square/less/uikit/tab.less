@@ -1,0 +1,158 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Tab component
+//
+// ========================================================================
+
+// Variables
+// ========================================================================
+
+@tab-border:                                @global-border;
+@tab-color:                                 @global-link-color;
+@tab-hover-border:                          rgba(0,0,0,0);
+@tab-hover-background:                      @global-primary-background;
+@tab-hover-color:                           @global-contrast-color;
+@tab-active-border:                         @global-border;
+@tab-active-background:                     @global-background;
+@tab-active-color:                          @global-color;
+@tab-disabled-color:                        @global-muted-color;
+
+//
+// New
+//
+
+@tab-border-width:                          @global-small-border-width;
+@tab-border-radius:                         @global-small-border-radius;
+
+
+// Component
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-tab() {
+    border: @tab-border-width solid transparent;
+    border-bottom-width: 0;
+    border-radius: @tab-border-radius @tab-border-radius 0 0;
+}
+
+// Hover 
+.hook-tab-hover() {}
+
+// Active 
+.hook-tab-active() {}
+
+// Disabled 
+.hook-tab-disabled() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-tab-misc() {
+
+    .uk-tab { 
+    
+        border-bottom-width: @tab-border-width; 
+
+        .uk-open > .uk-dropdown { margin-left: 5px; }
+
+    } 
+
+    .uk-tab > li { margin-bottom: -@tab-border-width; }
+
+    .uk-tab > li:not(.uk-active) > a:hover,
+    .uk-tab > li:not(.uk-active) > a:focus,
+    .uk-tab > li.uk-open:not(.uk-active) > a {
+        margin-bottom: 0;
+        padding-bottom: @tab-padding-vertical;
+    }
+
+    /* Modifier: `uk-tab-bottom'
+     ========================================================================== */
+
+    .uk-tab-bottom { border-top-width: @tab-border-width; }
+
+    .uk-tab-bottom > li { margin-top: -@tab-border-width; }
+
+    .uk-tab-bottom > li > a { 
+        border-bottom-width: @tab-border-width;
+        border-radius: 0 0 @tab-border-radius @tab-border-radius; 
+    }
+
+    .uk-tab-bottom > li:not(.uk-active) > a:hover,
+    .uk-tab-bottom > li:not(.uk-active) > a:focus,
+    .uk-tab-bottom > li.uk-open:not(.uk-active) > a {
+        margin-top: 0;
+        padding-top: @tab-padding-vertical;
+    }
+
+
+    /* Modifier: 'tab-grid'
+     ========================================================================== */
+
+    .uk-tab-grid:before {
+        bottom: -@tab-border-width; 
+        border-top-width: @tab-border-width;
+    }
+        
+    .uk-tab-grid.uk-tab-bottom:before { top: -@tab-border-width; }  
+
+    /* Modifier: 'tab-center'
+     ========================================================================== */
+
+    .uk-tab-center { border-bottom-width: @tab-border-width; }
+
+    .uk-tab-center-bottom { border-top-width: @tab-border-width; }
+
+
+    /* Modifier: 'tab-left', 'tab-right'
+     ========================================================================== */
+
+    /* Only tablets and desktops */
+    @media (min-width: @breakpoint-medium) {
+
+        /*
+         * Modifier: 'tab-left'
+         */
+
+        .uk-tab-left { border-right-width: @tab-border-width; }
+        
+        .uk-tab-left > li { margin-right: -@tab-border-width; }
+        
+        .uk-tab-left > li > a { 
+            border-bottom-width: @tab-border-width;
+            border-radius: @tab-border-radius 0 0 @tab-border-radius;  
+        }
+
+        .uk-tab-left > li:not(.uk-active) > a:hover,
+        .uk-tab-left > li:not(.uk-active) > a:focus {
+            margin-right: 0;
+            padding-right: @tab-padding-horizontal;
+        }
+        
+        /*
+         * Modifier: 'tab-right'
+         */
+
+        .uk-tab-right { border-left-width: @tab-border-width; }
+        
+        .uk-tab-right > li { margin-left: -@tab-border-width; }
+        
+        .uk-tab-right > li > a { 
+            border-bottom-width: @tab-border-width;
+            border-radius: 0 @tab-border-radius @tab-border-radius 0; 
+        }
+
+        .uk-tab-right > li:not(.uk-active) > a:hover,
+        .uk-tab-right > li:not(.uk-active) > a:focus {
+            margin-left: 0;
+            padding-left: @tab-padding-horizontal;
+        }
+
+}
+
+}

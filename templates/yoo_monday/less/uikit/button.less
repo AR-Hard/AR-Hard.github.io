@@ -1,0 +1,179 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Button
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@button-height:                                 @global-height;
+@button-mini-height:                            @global-height-mini;
+@button-small-height:                           @global-height-small;
+@button-large-height:                           @global-height-large;
+
+@button-line-height:                            @button-height;
+@button-mini-line-height:                       @button-mini-height;
+@button-small-line-height:                      @button-small-height;
+@button-large-line-height:                      @button-large-height;
+
+@button-mini-font-size:                         round((@global-font-size * 0.625)); // 10px
+@button-small-font-size:                        round((@global-font-size * 0.687)); // 11px
+@button-large-font-size:                        @global-font-size;
+
+@button-padding-horizontal:                     20px;
+@button-mini-padding-horizontal:                8px;
+@button-small-padding-horizontal:               12px;
+@button-large-padding-horizontal:               20px;
+
+@button-font-size:                              round((@global-font-size * 0.8)); // 12px
+@button-background:                             @global-light-background;
+@button-color:                                  @global-color;
+@button-hover-background:                       @global-light-background;
+@button-hover-color:                            @global-color;
+@button-active-background:                      darken(@global-light-background, 3%);
+@button-active-color:                           @global-color;
+
+@button-primary-background:                     @global-primary-background;
+@button-primary-color:                          @global-contrast-color;
+@button-primary-hover-color:                    @global-contrast-color;
+@button-primary-hover-background:               darken(@global-primary-background, 10%);
+@button-primary-active-color:                   @global-contrast-color;
+@button-primary-active-background:              darken(@global-primary-background, 13%);
+
+@button-success-background:                     @global-success-background;
+@button-success-color:                          @global-contrast-color;
+@button-success-hover-background:               darken(@global-success-background, 10%);
+@button-success-hover-color:                    @global-contrast-color;
+@button-success-active-color:                   @global-contrast-color;
+@button-success-active-background:              darken(@global-success-background, 13%);
+
+@button-danger-background:                      @global-danger-background;
+@button-danger-color:                           @global-contrast-color;
+@button-danger-hover-background:                darken(@global-danger-background, 10%);
+@button-danger-hover-color:                     @global-contrast-color;
+@button-danger-active-color:                    @global-contrast-color;
+@button-danger-active-background:               darken(@global-danger-background, 13%);
+
+@button-disabled-background:                    @global-muted-background;
+@button-disabled-color:                         @global-muted-color;
+
+@button-link-color:                             @global-link-color;
+@button-link-hover-color:                       @global-link-hover-color;
+@button-link-disabled-color:                    @global-muted-color;
+@button-link-hover-text-decoration:             none;
+
+//
+// New
+//
+
+@button-box-shadow-horizontal:                  0;
+@button-box-shadow-vertical:                    4px;
+@button-box-shadow-blur:                        8px;
+@button-box-shadow-spread:                      0px;
+@button-box-shadow-color:                       rgba(160,165,168,0.3);
+@button-hover-box-shadow-color:                 rgba(160,165,168,0.6);
+
+@button-group-hover-box-shadow-color:           rgba(160,165,168,0.3);
+
+@button-font-weight:                            @global-alt-font-weight;
+@button-text-transform:                         @global-text-transform;
+@button-letter-spacing:                         @global-alt-letter-spacing;
+
+
+// Component
+// ========================================================================
+
+.hook-button() {
+    box-shadow: @button-box-shadow-horizontal @button-box-shadow-vertical @button-box-shadow-blur @button-box-shadow-spread @button-box-shadow-color;
+    font-weight: @button-font-weight;
+    text-transform: @button-text-transform;
+    letter-spacing: @button-letter-spacing;
+}
+
+.hook-button-hover() {
+    box-shadow: @button-box-shadow-horizontal @button-box-shadow-vertical @button-box-shadow-blur @button-box-shadow-spread @button-hover-box-shadow-color;
+    transform: translateY(0);
+}
+
+.hook-button-active() { box-shadow: @button-box-shadow-horizontal @button-box-shadow-vertical @button-box-shadow-blur @button-box-shadow-spread @button-hover-box-shadow-color; }
+
+
+// Color modifiers
+// ========================================================================
+
+//
+// Modifier: `uk-button-primary`
+//
+
+.hook-button-primary() { box-shadow: none; }
+
+.hook-button-primary-hover() { box-shadow: none; }
+.hook-button-primary-active() { box-shadow: none; }
+
+//
+// Modifier: `uk-button-success`
+//
+
+.hook-button-success() { box-shadow: none; }
+
+.hook-button-success-hover() { box-shadow: none; }
+.hook-button-success-active() { box-shadow: none; }
+
+//
+// Modifier: `uk-button-danger`
+//
+
+.hook-button-danger() { box-shadow: none; }
+
+.hook-button-danger-hover() { box-shadow: none; }
+.hook-button-danger-active() { box-shadow: none; }
+
+
+// Disabled state
+// ========================================================================
+
+.hook-button-disable() { box-shadow: none; }
+
+
+// Modifier: `uk-button-link`
+// ========================================================================
+
+.hook-button-link() { box-shadow: none; }
+
+
+// Size modifiers
+// ========================================================================
+
+.hook-button-large() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-button-misc() {
+
+    .uk-button-group { box-shadow: @button-box-shadow-horizontal @button-box-shadow-vertical @button-box-shadow-blur @button-box-shadow-spread @button-box-shadow-color; }
+
+    .uk-button-group .uk-button:not(:disabled) {
+
+        box-shadow: none;
+
+        &:hover,
+        &:active,
+        &:focus { box-shadow: @button-box-shadow-horizontal @button-box-shadow-vertical @button-box-shadow-blur @button-box-shadow-spread @button-group-hover-box-shadow-color; }
+
+    }
+
+    .uk-button-group .uk-button.uk-button-primary,
+    .uk-button-group .uk-button.uk-button-success,
+    .uk-button-group .uk-button.uk-button-danger {
+
+        &:hover,
+        &:active,
+        &:focus { box-shadow: none; }
+    }
+
+}

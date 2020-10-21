@@ -1,0 +1,32 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Table component
+//
+// ===========================================================================
+
+// Variables
+// ===========================================================================
+
+@table-margin-vertical:                         @global-margin;
+@table-caption-color:                           @global-muted-color;
+@table-caption-font-size:                       round((@global-font-size * 0.85));
+@table-striped-background:                      @list-striped-background;
+@table-hover-background:                        fade(@global-border, 30%);
+
+
+// Component
+// ===========================================================================
+
+.hook-table() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-thumbnail-misc() {
+
+    /* Set alignment */
+    .uk-table td { vertical-align: middle; }
+
+}

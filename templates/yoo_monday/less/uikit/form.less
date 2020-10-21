@@ -1,0 +1,147 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Form
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@form-height:                                   @global-height;
+@form-padding:                                  4px 2px;
+@form-small-height:                             @global-height-small;
+@form-large-height:                             @global-height-large;
+
+@form-small-font-size:                          round((@global-font-size * 0.8)); // 12px
+@form-large-font-size:                          round((@form-small-font-size * 1.333)); // 16px
+
+@form-border:                                   @global-border;
+@form-border-width:                             @global-border-width;
+@form-background:                               rgba(0,0,0,0);
+@form-color:                                    @global-color;
+@form-placeholder-color:                        @global-muted-color;
+
+@form-focus-border:                             @global-secondary-background;
+@form-focus-background:                         rgba(0,0,0,0);
+@form-focus-color:                              @global-color;
+
+@form-disabled-border:                          lighten(@global-border, 1%);
+@form-disabled-background:                      rgba(0,0,0,0);
+@form-disabled-color:                           lighten(@global-muted-color, 10%);
+
+@form-danger-border:                            @global-danger-background;
+@form-danger-background:                        @form-background;
+@form-danger-color:                             @global-danger-color;
+
+@form-success-border:                           @global-success-background;
+@form-success-background:                       @form-background;
+@form-success-color:                            @global-success-color;
+
+@form-blank-border:                             @global-color;
+
+@form-mini-width:                               80px;
+
+@form-legend-border:                            @global-border;
+@form-legend-border-width:                      @global-border-width;
+@form-legend-font-size:                         round((@global-font-size * 1.53)); // 23px
+@form-legend-line-height:                       round((@form-legend-font-size * 1.91)); // 44px
+
+@form-gutter:                                   @global-grid-gutter;
+
+@form-stacked-font-weight:                      @global-font-weight;
+
+@form-icon-width:                               @global-height;
+@form-icon-font-size:                           @global-font-size;
+@form-icon-color:                               @global-muted-color;
+
+//
+// New
+//
+
+@form-font-size:                                round((@global-font-size * 0.933)); // 14px
+@form-font-family:                              @global-font-family;
+@form-font-weight:                              @global-font-weight;
+
+@form-padding-horizontal:                       5px;
+
+@form-box-shadow-vertical:                      2px;
+@form-focus-box-shadow-color:                   @global-color;
+@form-danger-focus-box-shadow-color:            @global-danger-background;
+@form-success-focus-box-shadow-color:           @global-success-background;
+
+
+// Component
+// ========================================================================
+
+.hook-form() {
+    position: relative;
+    border-width: 0 0 @form-border-width 0;
+    font-size: @form-font-size;
+    font-weight: @form-font-weight;
+    font-family: @form-font-family;
+    -webkit-transition: box-shadow .12s ease-in-out;
+    transition: box-shadow .12s ease-in-out;
+}
+
+// Focus state
+.hook-form-focus() { box-shadow: 0 @form-box-shadow-vertical 0 0 @form-focus-box-shadow-color; }
+
+// Disabled state
+.hook-form-disabled() { border-width: 0 0 @form-border-width 0; }
+
+// Legend
+.hook-form-legend() {}
+
+// Validation states
+// ========================================================================
+
+//
+// Error state
+//
+
+.hook-form-danger() {
+    &:focus { box-shadow: 0 @form-box-shadow-vertical 0 0 @form-danger-focus-box-shadow-color !important; }
+}
+
+//
+// Success state
+//
+
+.hook-form-success() {
+    &:focus { box-shadow: 0 @form-box-shadow-vertical 0 0 @form-success-focus-box-shadow-color !important; }
+}
+
+
+// Style modifiers
+// ========================================================================
+
+.hook-form-blank() {
+    &:focus { box-shadow: none !important; }
+}
+
+.hook-form-blank-focus() {}
+
+
+// Sub-object: `uk-form-label`
+// ========================================================================
+
+.hook-form-stacked-label() {}
+
+.hook-form-horizontal-label() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-form-misc() {
+
+    // Padding for textarea and select element
+    .uk-form select {
+        padding: @form-padding-horizontal;
+        border: 1px solid @form-border;
+        box-shadow: none !important;
+    }
+
+}

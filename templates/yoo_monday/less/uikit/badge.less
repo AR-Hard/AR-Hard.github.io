@@ -1,0 +1,74 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Badge
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@badge-background:                              rgba(0,0,0,0);
+@badge-padding-horizontal:                      0;
+@badge-font-size:                               round((@global-font-size * 0.8)); // 12px
+@badge-font-weight:                             400;
+@badge-line-height:                             round((@badge-font-size * 1.46)); // 18px
+@badge-color:                                   @global-primary-color;
+@badge-text-transform:                          @global-text-transform;
+@badge-hover-color:                             @global-contrast-color;
+
+@badge-notification-font-size:                  round((@global-font-size * 0.85)); // 12px
+@badge-notification-line-height:                round((@badge-notification-font-size * 1.46)); // 18px
+
+@badge-success-background:                      rgba(0,0,0,0);
+@badge-warning-background:                      rgba(0,0,0,0);
+@badge-danger-background:                       rgba(0,0,0,0);
+
+//
+// New
+//
+
+@badge-letter-spacing:                         @global-letter-spacing;
+@badge-margin-bottom:                          @global-margin-small;
+
+
+// Component
+// ========================================================================
+
+.hook-badge() {
+    margin-bottom: @badge-margin-bottom;
+    letter-spacing: @badge-letter-spacing;
+    text-align: left;
+}
+
+
+// Color modifier
+// ========================================================================
+
+//
+// Modifier: `badge-success`
+//
+
+.hook-badge-success() {
+    color: @global-success-color;
+    text-align: left;
+}
+
+//
+// Modifier: `badge-warning`
+//
+
+.hook-badge-warning() { color: @global-warning-color; }
+
+//
+// Modifier: `badge-danger`
+//
+
+.hook-badge-danger() { color: @global-danger-color; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-badge-misc() {}

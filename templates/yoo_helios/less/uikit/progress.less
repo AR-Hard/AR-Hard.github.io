@@ -1,0 +1,113 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Progress
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@progress-height:                               24px;
+@progress-mini-height:                          6px;
+@progress-small-height:                         12px;
+
+@progress-margin-vertical:                      @global-margin;
+@progress-background:                           @global-dark-background;
+
+@progress-bar-background:                       @global-primary-background;
+@progress-bar-font-size:                        12px;
+@progress-bar-color:                            @global-contrast-color;
+
+@progress-bar-success-background:               @global-success-background;
+@progress-bar-warning-background:               @global-warning-background;
+@progress-bar-danger-background:                @global-danger-background;
+
+//
+// New
+//
+
+@progress-border-radius:                        (@progress-height / 2);
+@progress-padding:                              2px;
+@progress-inner-shadow:                         rgba(0,0,0,0.04);
+@progress-drop-shadow:                          rgba(255,255,255,0.03);
+@progress-success-color:                        @global-contrast-color;
+@progress-warning-color:                        @global-contrast-color;
+@progress-danger-color:                         @global-contrast-color;
+
+@progress-gradient-top:                         @global-primary-gradient-top;
+@progress-gradient-bottom:                      @global-primary-gradient-bottom;
+
+@progress-success-gradient-top:                 @global-success-gradient-top;
+@progress-success-gradient-bottom:              @global-success-gradient-bottom;
+
+@progress-warning-gradient-top:                 @global-warning-gradient-top;
+@progress-warning-gradient-bottom:              @global-warning-gradient-bottom;
+
+@progress-danger-gradient-top:                  @global-danger-gradient-top;
+@progress-danger-gradient-bottom:               @global-danger-gradient-bottom;
+
+
+// Mixins
+// ========================================================================
+
+.progress-gradient (@startColor: @progress-gradient-top, @endColor: @progress-gradient-bottom) {
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor);
+    background-image: linear-gradient(to bottom, @startColor, @endColor);
+}
+
+
+// Component
+// ========================================================================
+
+.hook-progress() {
+    padding: @progress-padding;
+    box-shadow: inset 0 0 0 1px @progress-inner-shadow, inset 1px 2px 2px @progress-inner-shadow, 1px 1px 1px @progress-drop-shadow;
+    border-radius: @progress-border-radius;
+}
+
+
+// Sub-object: `progress-bar`
+// ========================================================================
+
+.hook-progress-bar() {
+    .progress-gradient;
+    box-shadow: inset 1px 1px 0 @global-primary-highlight, 1px 1px 1px @global-default-shadow;
+    border-radius: @progress-border-radius;
+    line-height: (@progress-height - (@progress-padding * 2));
+}
+
+
+// Color modifiers
+// ========================================================================
+
+.hook-progress-bar-success() {
+    .progress-gradient(@startColor: @progress-success-gradient-top, @endColor: @progress-success-gradient-bottom);
+    box-shadow: inset 1px 1px 0 @global-success-highlight, 1px 1px 1px @global-default-shadow;
+    color: @progress-success-color;
+}
+
+.hook-progress-bar-warning() {
+    .progress-gradient(@startColor: @progress-warning-gradient-top, @endColor: @progress-warning-gradient-bottom);
+    box-shadow: inset 1px 1px 0 @global-warning-highlight, 1px 1px 1px @global-default-shadow;
+    color: @progress-warning-color;
+}
+
+.hook-progress-bar-danger() {
+    .progress-gradient(@startColor: @progress-danger-gradient-top, @endColor: @progress-danger-gradient-bottom);
+    box-shadow: inset 1px 1px 0 @global-danger-highlight, 1px 1px 1px @global-default-shadow;
+    color: @progress-danger-color;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-progress-misc() {
+
+    // Size modifiers
+    .uk-progress-mini,
+    .uk-progress-small { border-radius: 500px; }
+
+}

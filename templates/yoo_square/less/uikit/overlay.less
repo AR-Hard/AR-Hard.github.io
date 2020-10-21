@@ -1,0 +1,83 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Overlay component
+//
+// ===========================================================================
+
+// Variables
+// ========================================================================
+
+@overlay-area-background:                       fade(darken(@global-secondary-background, 10%), 80%);
+@overlay-area-icon-size:                        30px;
+@overlay-area-icon-color:                       fade(@global-color, 95%);
+@overlay-caption-background:                    @overlay-area-background;
+@overlay-caption-padding:                       @global-margin;
+@overlay-caption-color:                         @global-color;
+
+//
+// New
+//
+
+@overlay-border-radius:                         @global-border-radius - 3px;
+
+
+// Component
+// ===========================================================================
+
+
+// Component
+// ===========================================================================
+
+
+// Sub-object `uk-overlay-area`
+// ===========================================================================
+
+.hook-overlay-area() {
+    top: 100% !important;
+    margin: auto auto;
+    opacity: 0 !important;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all .15s ease-out;
+}
+
+.hook-overlay-area-icon() {}
+
+
+// Sub-object `uk-overlay-caption`
+// ===========================================================================
+
+.hook-overlay-caption() { 
+    text-align: center;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-overlay-misc() {
+
+    .uk-overlay { 
+    overflow: hidden;
+    border-radius: @overlay-border-radius @overlay-border-radius 0 0;
+    }
+    
+    .uk-overlay img {
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+    -webkit-transform-origin: bottom left;
+    transform-origin: bottom left;
+    }
+
+    .uk-overlay:hover .uk-overlay-area { 
+        left: 0;
+        top: 0 !important;
+        opacity: 1 !important; 
+    }
+
+    .uk-overlay:hover img > {
+        -webkit-transform: scale(1.1) translate(-20px);
+        transform: scale(1.1) translate(-20px);
+    }   
+
+}

@@ -1,0 +1,146 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@import 'https://fonts.googleapis.com/css?family=Noto+Sans';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,300';
+
+// Variables
+// ========================================================================
+
+//
+// Typography
+//
+
+@global-color: #414d5a;
+@global-muted-color: #D0D2D8;
+@global-link-color: #ff304e;
+@global-link-hover-color: #515e6c;
+@global-contrast-color: #ffffff;
+@base-body-font-family: 'Open Sans';
+@base-heading-font-family: 'Noto Sans';
+
+//
+// Border
+//
+
+@global-border: #dfe2e8;
+@global-hover-border: #c4cbd3;
+@global-border-radius: 4px;
+
+//
+// Backgrounds
+//
+
+@global-background: #f7f7fa;
+@global-light-background: rgba(226, 230, 237, 0.96);
+@global-light-hover-background: rgba(196, 203, 211, 0.15);
+@global-secondary-background: #363c4f;
+@global-primary-background: #ff304e;
+@global-success-background: #5ad28a;
+@global-warning-background: #f8be48;
+@global-danger-background: #ea1b47;
+
+//
+// Alert
+//
+
+@alert-danger-color: @global-contrast-color;
+@alert-warning-color: @global-contrast-color;
+@alert-success-color: @global-contrast-color;
+
+//
+// Base
+//
+
+@base-body-font-family: 'Open Sans';
+@base-heading-font-family: 'Noto Sans';
+@base-ins-color: @global-contrast-color;
+@base-body-font-weight: 400;
+
+//
+// Button
+//
+
+@button-danger-color: @global-contrast-color;
+@button-success-color: @global-contrast-color;
+@button-primary-hover-background: #363c4f;
+@button-success-hover-background: lighten(@button-success-background, 7%);
+@button-disabled-border: fade(@global-border, 60%);
+
+//
+// Close
+//
+
+@close-alt-color: @global-secondary-background;
+
+//
+// Form
+//
+
+@form-disabled-border: fade(@global-border, 60%);
+
+//
+// Navbar
+//
+
+@navbar-nav-font-weight: 400;
+
+//
+// Overlay
+//
+
+@overlay-caption-color: @global-contrast-color;
+@overlay-area-icon-color: @global-contrast-color;
+
+//
+// Panel
+//
+
+@panel-box-secondary-color: @global-contrast-color;
+@panel-box-secondary-title-color: @global-contrast-color;
+@panel-box-secondary-hover-link-color: @panel-box-secondary-color;
+@panel-box-primary-button-border:  darken(@global-border, 8%);
+@panel-box-primary-button-hover-border:  darken(@global-border, 18%);
+@panel-box-secondary-button-border: fade(@global-border, 50%);
+@panel-box-secondary-button-hover-background: fade(@global-light-hover-background, 5%);
+@panel-box-secondary-button-primary-hover-background: lighten(darken(@button-primary-hover-background, 10%), 20%);
+
+//
+// Progress
+//
+
+@progress-bar-color: @global-contrast-color;
+
+//
+// Text
+//
+
+@text-danger-color: #ea1b47;
+@text-warning-color: #f8be48;
+@text-success-color: #5ad28a;
+@text-primary-color: #6691ac;
+
+//
+// Caption
+//
+@caption-link-hover-color: lighten(@global-link-hover-color, 25%);
+
+
+// Theme Variables
+// ==========================================================================
+
+// Border
+@theme_global-block-dark-border: fade(@global-border, 80%);
+
+// System Style
+@theme_system_color: #414d5a;
+@theme_system-link-color: @global-link-color;
+@theme_system-link-hover-color: @global-link-hover-color;
+@theme_system-global-border: @global-border;
+@theme_system-button-color: @global-color;
+
+// Color Scroll
+@theme_scroll-start-color: @global-background;
+@theme_scroll-end-color: @global-background;
+
+// Widgetkit
+@theme_global-widgetkit-style: 'lightgrey';

@@ -1,0 +1,76 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Pagination component
+//
+// ===========================================================================
+
+// Variables
+// ========================================================================
+
+@pagination-line-height:                        @global-line-height;
+@pagination-background:                         rgba(0,0,0,0);
+@pagination-color:                              @global-color;
+@pagination-hover-background:                   rgba(0,0,0,0);
+@pagination-hover-color:                        @global-link-hover-color;
+@pagination-onclick-background:                 @pagination-hover-background;
+@pagination-onclick-color:                      @global-color;
+@pagination-active-background:                  @global-primary-background;
+@pagination-active-color:                       @global-contrast-color;
+@pagination-disabled-background:                rgba(0,0,0,0);
+@pagination-disabled-color:                     @global-muted-color;
+
+//
+// New
+//
+
+@pagination-border-radius:                      @global-small-border-radius;
+@pagination-border-width:                       @global-small-border-width;
+@pagination-border-style:                       solid;
+@pagination-link-hover-border:                  @global-border;
+
+@pagination-active-font-weight:                 400;
+
+
+// Component
+// ===========================================================================
+
+.hook-pagination-item() { border-radius: @pagination-border-radius; }
+
+
+// Items
+// ===========================================================================
+
+.hook-pagination-link() { 
+    position: relative;
+    border: @pagination-border-width @pagination-border-style transparent; 
+}
+
+.hook-pagination-link-hover() { 
+    border-color: @pagination-link-hover-border;
+    -webkit-transition: border-color .2s ease-in-out, background-color .4s ease-in-out;
+    transition: border-color .2s ease-in-out, background-color .4s ease-in-out;
+}
+
+.hook-pagination-link-active() { top: 1px; }
+
+//
+// Active
+//
+
+.hook-pagination-active() { 
+    padding: (1px + (@pagination-border-width*2)) (3px + (@pagination-border-width*2));
+    font-weight: @pagination-active-font-weight;
+}
+
+//
+// Disabled
+//
+
+.hook-pagination-disabled() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-pagination-misc() {}

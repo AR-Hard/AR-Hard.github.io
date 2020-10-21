@@ -1,0 +1,80 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Pagination
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@pagination-font-size:                          round((@global-font-size * 0.75)); // 12px
+@pagination-padding-horizontal:                 10px;
+@pagination-line-height:                        @global-line-height;
+@pagination-background:                         rgba(0,0,0,0);
+@pagination-color:                              @global-muted-color;
+@pagination-hover-background:                   rgba(0,0,0,0);
+@pagination-hover-color:                        @global-color;
+@pagination-onclick-background:                 rgba(0,0,0,0);
+@pagination-onclick-color:                      @global-color;
+
+@pagination-active-background:                  rgba(0,0,0,0);
+@pagination-active-color:                       @global-color;
+
+@pagination-disabled-background:                rgba(0,0,0,0);
+@pagination-disabled-color:                     @global-muted-color;
+
+//
+// New
+//
+
+@pagination-active-font-size:                   round((@global-font-size * 1.187)); // 19px
+@pagination-font-weight:                        @global-alt-font-weight;
+@pagination-text-transform:                     @global-text-transform;
+@pagination-letter-spacing:                     @global-letter-spacing;
+
+@pagination-panel-box-color:                    @global-muted-color;
+@pagination-panel-box-hover-color:              @global-color;
+@pagination-panel-box-active-color:             @global-color;
+
+// Component
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-pagination-item() {
+    font-weight: @pagination-font-weight;
+    text-transform: @pagination-text-transform;
+    letter-spacing: @pagination-letter-spacing;
+}
+
+// Link
+.hook-pagination-link() {}
+
+.hook-pagination-link-hover() {}
+
+.hook-pagination-link-active() {}
+
+// Active
+.hook-pagination-active() { font-size: @pagination-active-font-size; }
+
+// Disabled
+.hook-pagination-disabled() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-pagination-misc() {
+
+    .uk-panel-box:not(.uk-panel-box-primary):not(.uk-panel-box-secondary) {
+
+        .uk-pagination > li > a { color: @pagination-panel-box-color; }
+        .uk-pagination > li > a:hover,
+        .uk-pagination > li > a:focus { color: @pagination-panel-box-hover-color; }
+        .uk-pagination > .uk-active > span { color: @pagination-panel-box-active-color; }
+    }
+}

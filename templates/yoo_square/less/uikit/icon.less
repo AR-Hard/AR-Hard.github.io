@@ -1,0 +1,71 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Icon component
+//
+// ===========================================================================
+
+// Variables
+// ========================================================================
+
+@icon-hover-color:                          @global-color;
+@icon-hover-hover-color:                    @global-link-color;
+
+@icon-button-width:                         59px;
+@icon-button-height:                        @icon-button-width;
+@icon-button-border-radius:                 (@global-border-radius + 1px);
+@icon-button-background:                    rgba(0,0,0,0);
+@icon-button-font-size:                     round((@icon-button-width * 0.5));
+@icon-button-color:                         @global-color;
+@icon-button-hover-background:              @global-light-hover-background;
+@icon-button-hover-color:                   @global-link-hover-color;
+@icon-button-active-background:             @icon-button-hover-background;
+@icon-button-active-color:                  @icon-button-hover-color;
+
+//
+// New
+//
+
+@icon-button-border-width:                  @global-small-border-width;
+@icon-button-border-style:                  solid;
+@icon-button-border:                        @global-border;
+@icon-button-margin-left:                   5px;
+@icon-button-hover-border:                  @global-hover-border;
+@icon-button-active-border:                 @icon-button-hover-border;
+
+
+// Modifier: `uk-icon-hover`
+// ========================================================================
+
+.hook-icon-hover() {}
+
+.hook-icon-hover-hover() {}
+
+
+// Modifier: `uk-icon-button`
+// ===========================================================================
+
+.hook-icon-button() {
+    position: relative;
+    border: @icon-button-border-width @icon-button-border-style @icon-button-border;
+    line-height: @icon-button-height - (@icon-button-border-width*2);
+}
+
+// Hover
+.hook-icon-button-hover() { border-color: @icon-button-hover-border; }
+
+// Active
+.hook-icon-button-active() {
+    top: 1px;
+    border-color: @icon-button-active-border;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-icon-misc() {
+
+    .uk-icon-button + .uk-icon-button { margin-left: @icon-button-margin-left; }
+
+}

@@ -1,0 +1,83 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Pagination component
+//
+// ==========================================================================
+
+
+// Variables
+// ========================================================================
+
+@pagination-font-size:                              @global-small-font-size;
+@pagination-line-height:                            34px;
+@pagination-background:                             rgba(0,0,0,0);
+@pagination-color:                                  @global-color;
+@pagination-hover-background:                       rgba(0,0,0,0);
+@pagination-hover-color:                            @global-color;
+@pagination-onclick-background:                     rgba(0,0,0,0);
+@pagination-onclick-color:                          @global-color;
+
+@pagination-active-background:                      rgba(0,0,0,0);
+@pagination-active-color:                           @global-color;
+
+@pagination-disabled-background:                    rgba(0,0,0,0);
+@pagination-disabled-color:                         @global-muted-color;
+
+//
+// New
+//
+
+@pagination-top-border:                             @global-border;
+@pagination-top-hover-border:                       @global-color;
+@pagination-top-active-border:                      @global-color;
+
+@pagination-font-family:                            @global-small-font-family;
+@pagination-font-weight:                            @global-small-font-weight;
+
+
+// Component
+// ==========================================================================
+
+.hook-pagination-item() {
+
+    margin-top: -1px;
+    font-family: @pagination-font-family;
+    font-weight: @pagination-font-weight;
+
+    .uk-icon-double-angle-left:before { content: "\f177"; }
+    .uk-icon-double-angle-right:before { content: "\f178"; }
+
+}
+
+
+// Items
+// ==========================================================================
+
+.hook-pagination-link() {}
+
+.hook-pagination-link-hover() { border-top: 1px solid @pagination-top-hover-border; }
+
+.hook-pagination-link-active() {}
+
+//
+// Active
+//
+
+.hook-pagination-active() { border-top: 1px solid @pagination-top-active-border; }
+
+//
+// Disabled
+//
+
+.hook-pagination-disabled() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-pagination-misc() {
+
+    .uk-pagination { border-top: 1px solid @pagination-top-border; }
+
+}

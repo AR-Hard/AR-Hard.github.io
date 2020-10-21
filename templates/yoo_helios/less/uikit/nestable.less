@@ -1,0 +1,62 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Nestable
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@nestable-padding-left:                         40px;
+
+@nestable-dragged-z-index:                      @global-z-index + 50;
+
+@nestable-item-margin:                          10px;
+
+@nestable-placeholder-border:                   @global-muted-color;
+
+@nestable-empty-height:                         40px;
+
+@nestable-panel-padding:                        5px 10px;
+@nestable-panel-background:                     @global-light-background;
+
+//
+// New
+//
+
+@nestable-icon-text-shadow:                     rgba(255,255,255,0.06);
+
+
+// Component
+// ========================================================================
+
+.hook-nestable() {}
+
+.hook-nestable-item() {}
+
+.hook-nestable-dragged() {}
+
+.hook-nestable-placeholder() {}
+
+.hook-nestable-empty() {}
+
+.hook-nestable-handle() { text-shadow: 1px 1px 1px @nestable-icon-text-shadow; }
+
+.hook-nestable-toggle() {
+    margin: 0 5px;
+    text-shadow: 1px 1px 1px @nestable-icon-text-shadow;
+}
+
+.hook-nestable-panel() {
+    border-radius: @global-border-radius;
+    box-shadow: inset 1px 1px 0 @global-default-highlight, 1px 1px 1px @global-default-shadow;
+    text-shadow: 1px 1px 1px @global-text-shadow;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-nestable-misc() {}

@@ -1,0 +1,103 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Close
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@close-size:                                    24px;
+@close-alt-padding:                             0;
+
+@close-alt-background:                          @global-primary-background;
+
+//
+// New
+//
+
+@close-icon-size:                               10px;
+@close-color:                                   @global-contrast-color;
+@close-alt-icon-size:                           8px;
+@close-alt-hover-background:                    desaturate(darken(@close-alt-background, 5%), 10%);
+@close-alt-color:                               @global-contrast-color;
+@close-alt-active-shadow:                       rgba(0,0,0,0.4);
+
+
+// Component
+// ========================================================================
+
+.hook-close() {
+
+    color: @close-color !important;
+    opacity: 0.2 !important;
+
+    &:hover { opacity: 0.5 !important; }
+
+    &:focus,
+    &:active { opacity: 1.0 !important; }
+
+}
+
+
+// Modifier: `uk-close-alt`
+// ========================================================================
+
+.hook-close-alt() {
+
+    border-radius: ((@close-size + @close-alt-padding) / 2);
+    box-shadow: 1px 1px 2px @global-default-shadow;
+    color: @close-alt-color !important;
+    text-shadow: 1px 1px 1px @global-text-shadow;
+    opacity: 1 !important;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: opacity 0.15s, box-shadow 0.1s, -webkit-transform 0.08s;
+    transition: opacity 0.15s, box-shadow 0.1s, transform 0.08s;
+
+    &:hover {
+        background: @close-alt-hover-background;
+        color: @close-alt-color;
+        opacity: 1.0 !important;
+    }
+
+    &:active {
+        box-shadow: 0 0 10px @close-alt-active-shadow;
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    &:active,
+    &:focus { color: @close-alt-color; }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-close-misc() {
+
+    .uk-close {
+
+        &::after {
+            content: "\e605";
+            font-size: @close-icon-size;
+            font-family: 'helios';
+            text-shadow: 1px 1px 1px @global-text-shadow;
+        }
+
+    }
+
+    .uk-close-alt {
+
+        &::after {
+            font-size: @close-alt-icon-size;
+            opacity: 1 !important;
+        }
+
+    }
+
+}

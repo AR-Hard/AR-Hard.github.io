@@ -1,0 +1,77 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Overlay
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@overlay-panel-color:                           @global-contrast-color;
+
+@overlay-icon-color:                            @global-contrast-color;
+
+// DEPRECATED
+@overlay-area-background:                           fade(@global-primary-background, 70%);
+@overlay-area-icon-size:                            40px;
+@overlay-area-icon-color:                           @global-contrast-color;
+
+@overlay-caption-background:                        fade(@global-primary-background, 70%);
+@overlay-caption-padding:                           @global-margin;
+@overlay-caption-color:                             @global-contrast-color;
+
+
+// Sub-object `uk-overlay-panel`
+// ========================================================================
+
+.hook-overlay-panel() {}
+
+
+// Sub-object `uk-overlay-background`
+// ========================================================================
+
+.hook-overlay-background() {}
+
+
+// Sub-object `uk-overlay-icon`
+// ========================================================================
+
+.hook-overlay-icon() {}
+
+
+// Sub-object `uk-overlay-area`
+// ==========================================================================
+
+.hook-overlay-area() {
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.hook-overlay-area-icon() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-overlay-misc() {
+
+    /* Sub-object `uk-overlay-area`
+     ========================================================================== */
+
+    .uk-overlay { overflow: hidden; }
+
+    .uk-overlay:hover .uk-overlay-area,
+    .uk-overlay-toggle:hover .uk-overlay-area {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+}

@@ -1,0 +1,123 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@import 'https://fonts.googleapis.com/css?family=Cabin+Sketch:700';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,300';
+
+// Variables
+// ========================================================================
+
+//
+// Typography
+//
+
+@global-muted-color: rgba(255, 255, 255, 0.25);
+@global-link-color: #5499d9;
+@global-contrast-color: #ffffff;
+@base-heading-font-family: 'Cabin Sketch';
+
+//
+// Border
+//
+
+@global-border: rgba(255, 255, 255, 0.25);
+@global-hover-border: #ababab;
+
+//
+// Backgrounds
+//
+
+@global-background: #272727;
+@global-light-background: rgba(255, 255, 255, 0.15);
+@global-light-hover-background: rgba(255, 255, 255, 0.08);
+@global-secondary-background: #438fd7;
+@global-primary-background: #438fd7;
+@global-success-background: #57c885;
+@global-warning-background: #edb230;
+@global-danger-background: #ca354a;
+
+//
+// Badge
+//
+
+@badge-notification-color: fade(@global-contrast-color, 100%);
+
+//
+// Base
+//
+
+@base-heading-font-family: 'Cabin Sketch';
+@base-heading-font-weight: 700;
+@base-body-font-weight: 300;
+@base-em-color: #48aaff;
+
+//
+// Button
+//
+
+@button-primary-hover-background: #ffffff;
+@button-primary-hover-color: #438fd7;
+
+//
+// Form
+//
+
+@form-success-background: fade(@global-success-background, 5%);
+@form-danger-background: fade(@form-danger-border, 5%);
+
+//
+// Offcanvas
+//
+
+@offcanvas-background: rgba(0, 0, 0, 0.85);
+
+//
+// Overlay
+//
+
+@overlay-area-background: rgba(0, 0, 0, 0.85);
+
+//
+// Panel
+//
+
+@panel-box-secondary-link-color: #272727;
+
+//
+// Progress
+//
+
+@progress-bar-color: fade(@global-contrast-color, 100%);
+
+//
+// Text
+//
+
+@text-primary-color: #c7e6ff;
+@text-danger-color: rgb(202, 53, 74);
+@text-warning-color: #edb230;
+@text-success-color: #57c885;
+
+//
+// Caption
+//
+
+@caption-panel-background: rgba(0,0,0,0.85);
+
+
+// Theme Variables
+// ==========================================================================
+
+// Backgrounds
+@theme_global-body-style: 'darkgrey';
+@theme_global-block-dark-background: fade(@global-border, 2%);
+
+// System Style
+@theme_system_color: #121620;
+@theme_system-link-color: @global-link-color;
+@theme_system-link-hover-color: saturate(@theme_system-link-color, 30%);
+@theme_system-global-border: #121620;
+@theme_system-button-color: #121620;
+
+// Color Scroll
+@theme_scroll-start-color:				@global-background;
+@theme_scroll-end-color: 				@global-background;

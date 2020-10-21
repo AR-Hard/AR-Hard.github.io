@@ -1,0 +1,36 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/* ========================================================================
+   Use this file to add custom CSS easily
+ ========================================================================== */
+
+/* Logo color */
+[class*='tm-logo'] svg path,
+[class*='tm-logo'] path,
+[class*='tm-logo'] rect { fill: #222; }
+
+body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) [class*='tm-logo'] svg path,
+body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached)[class*='tm-logo'] path,
+body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) [class*='tm-logo'] rect { fill: #222; }
+
+/* Background overrides for header and bottom-d */
+.tm-block-header.tm-contrast div.tm-block-texture,
+.tm-block-bottom-d.tm-contrast div.tm-block-texture { background: none; }
+
+/* Hide stalker */
+.tm-block-header.tm-contrast .tm-stalker { display: none; }
+
+/* Background image in layout position bottom-e */
+.tm-block-bottom-e > div { background-image: none; }
+
+/* SVG fill color for layout position bottom-e */
+.tm-block-bottom-e .uk-panel .uk-panel svg path,
+.tm-block-bottom-e .uk-panel .uk-panel path {
+    fill: #222;
+    opacity: 1;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.tm-block-bottom-e .uk-panel .uk-panel:hover svg path,
+.tm-block-bottom-e .uk-panel .uk-panel:hover path { opacity: 0.4; }

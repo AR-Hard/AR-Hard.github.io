@@ -1,0 +1,141 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Base component
+//
+// ===========================================================================
+
+// Variables
+// ========================================================================
+
+@base-body-background:                      @global-background;
+@base-body-font-family:                     'Open Sans';
+@base-body-font-weight:                     300;
+@base-body-font-size:                       @global-font-size;
+@base-body-line-height:                     @global-line-height;
+@base-body-color:                           @global-color;
+@base-link-color:                           @global-link-color;
+@base-link-hover-color:                     @global-link-hover-color;
+@base-em-color:                             #166992;
+@base-ins-background:                       @global-secondary-background;
+@base-ins-color:                            @global-color;
+@base-mark-background:                      @global-primary-background;
+@base-mark-color:                           @global-contrast-color;
+@base-selection-background:                 fade(@global-primary-background, 50%);
+@base-margin-vertical:                      @global-margin;
+@base-heading-font-family:                  'Nunito';
+@base-heading-font-weight:                  300;
+@base-heading-color:                        @global-color;
+@base-heading-margin-top:                   @global-margin-large;
+@base-h1-font-size:                         round((@global-font-size * 3.2));
+@base-h1-line-height:                       round((@base-h1-font-size * 1.06));
+@base-h2-font-size:                         round((@global-font-size * 2.6));
+@base-h2-line-height:                       round((@base-h2-font-size * 1.06));
+@base-h3-font-size:                         round((@global-font-size * 1.9));
+@base-h3-line-height:                       round((@base-h3-font-size * 1.06));
+@base-h4-font-size:                         round((@global-font-size * 1.6));
+@base-h4-line-height:                       round((@base-h4-font-size * 1.06));
+@base-h5-font-size:                         round((@global-font-size * 1.3));
+@base-h5-line-height:                       round((@base-h5-font-size * 1.08));
+@base-h6-font-size:                         round((@global-font-size * 1.1));
+@base-h6-line-height:                       round((@base-h6-font-size * 1.2));
+@base-hr-border:                            @global-border;
+@base-blockquote-border:                    @global-border;
+@base-blockquote-small-color:               @global-muted-color;
+@base-blockquote-font-size:                 round((@global-font-size * 1.14));
+@base-blockquote-line-height:               round((@base-blockquote-font-size * 1.37));
+@base-code-color:                           @global-color;
+@base-code-font-size:                       round((@global-font-size * 0.85));
+@base-pre-background:                       rgba(0,0,0,0);
+@base-pre-color:                            @global-color;
+@base-pre-font-size:                        round((@global-font-size * 0.85));
+@base-pre-line-height:                      round((@base-pre-font-size * 1.5));
+
+//
+// New
+//
+
+@base-pre-border-width:                     @global-small-border-width;
+@base-pre-border-style:                     solid;
+@base-pre-border:                           @global-border;
+@base-heading-margin-bottom:                15px;
+
+@base-code-border-radius:                   @global-small-border-radius;
+@base-code-border-width:                    @global-small-border-width;
+@base-code-border-style:                    solid;
+@base-code-border:                          @global-border;
+@base-h1-phone-font-size:                   (@base-h1-font-size / 1.5);
+@base-h1-phone-line-height:                 (@base-h1-line-height / 1.5);
+
+
+// Body
+// ===========================================================================
+
+.hook-base-body() {}
+
+// Code and preformatted text
+// ===========================================================================
+
+.hook-base-code() {
+    border-radius: @base-code-border-radius;
+    padding: 2px 4px;
+    border: @base-code-border-width @base-code-border-style @base-code-border;
+}
+
+.hook-base-code-reset() {
+    border: none;
+    background: none;
+}
+
+.hook-base-pre() {
+    border: @base-pre-border-width @base-pre-border-style @base-pre-border;
+    border-radius: @global-border-radius;
+}
+
+
+// Miscellaneous
+// ===========================================================================
+
+.hook-base-misc() {
+
+    /* Text-level semantics
+     ====================================================================== */
+
+    /*
+     * Links
+     */
+
+    a {
+        -webkit-transition: background-color .2s ease-in-out, color.2s ease-in-out;
+        transition: background-color .2s ease-in-out, color.2s ease-in-out;
+    }
+
+    mark { font-weight: normal; }
+
+    /*
+     * Emphasize
+     */
+
+    em { font-weight: normal; }
+
+
+    /* Headings
+     ====================================================================== */
+
+    h1, h2, h3, h4, h5, h6 { margin-bottom: @base-heading-margin-bottom; }
+
+    @media (max-width: @breakpoint-small-max) {
+
+        h1, .uk-h1 {
+            font-size: @base-h1-phone-font-size;
+            line-height: @base-h1-phone-line-height;
+        }
+
+    }
+
+    /* Horizontal rule
+     ====================================================================== */
+
+    hr { border-top-width: @global-border-width; }
+
+}

@@ -1,0 +1,96 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Subnav component
+//
+// ===========================================================================
+
+// Variables
+// ========================================================================
+
+@subnav-margin-horizontal:              15px;
+
+@subnav-color:                          @global-color;
+@subnav-hover-color:                    @global-link-color;
+@subnav-active-color:                   @global-link-color;
+
+@subnav-line-border:                    @global-border;
+
+@subnav-pill-hover-background:          rgba(0,0,0,0);
+@subnav-pill-hover-color:               @global-link-hover-color;
+@subnav-pill-active-background:         @global-primary-background;
+@subnav-pill-active-color:              @global-contrast-color;
+
+@subnav-disabled-color:                 @global-muted-color;
+
+//
+// New
+//
+
+@subnav-pill-border-width:              @global-small-border-width;
+@subnav-pill-border-style:              solid;
+@subnav-pill-border-radius:             @global-small-border-radius;
+@subnav-pill-hover-border:              @global-border;
+@subnav-pill-active-font-weight:        400;
+@subnav-line-divider-width:             @global-small-border-width;
+
+
+// Component
+// ===========================================================================
+
+//
+// Items
+//
+
+.hook-subnav() {}
+
+// Hover
+.hook-subnav-hover() {}
+
+// Active
+.hook-subnav-active() {}
+
+
+// Modifier: `uk-subnav-line'
+// ===========================================================================
+
+.hook-subnav-line-divider() { border-left-width: @subnav-line-divider-width; }
+
+
+// Modifier: `uk-subnav-pill'
+// ===========================================================================
+
+.hook-subnav-pill() {
+    position: relative;
+    border: @subnav-pill-border-width @subnav-pill-border-style transparent;
+    border-radius: @subnav-pill-border-radius;
+}
+
+// Hover
+.hook-subnav-pill-hover() { border-color: @subnav-pill-hover-border; }
+
+// Active
+.hook-subnav-pill-active() {
+
+    font-weight: @subnav-pill-active-font-weight;
+
+    &:hover {
+        border-color: transparent;
+    }
+
+}
+
+// Disabled state
+// ========================================================================
+
+.hook-subnav-disabled() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-subnav-misc() {
+
+    .uk-subnav-pill > li > a:active { top: 1px; }
+
+}

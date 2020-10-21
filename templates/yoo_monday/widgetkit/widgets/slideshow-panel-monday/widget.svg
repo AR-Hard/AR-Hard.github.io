@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-slideshow-panel-monday" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+<g>
+	<rect x="23" y="17" fill="#D85349" width="9" height="2"/>
+	<rect x="23" y="21" fill="#D85349" width="8" height="2"/>
+</g>
+<path fill="#D85449" d="M18.978,7h-2.06H2v25h15h1.977H39V7H18.978z M16.978,30H4V9h12.924l0.053,16.088V30z M37,30H18.994
+	l-0.016-4.88V9H37V30z"/>
+<g>
+	<polygon fill="#D85449" points="7.059,20 7.059,21 8.088,21 8.088,22 9.117,22 9.117,23 7.059,23 7.059,22 6.029,22 6.029,21 5,21
+		5,20 6.029,20 6.029,19 7.059,19 7.059,18 9.117,18 9.117,19 8.088,19 8.088,20 	"/>
+	<polygon fill="#D85449" points="13.941,21 13.941,20 12.912,20 12.912,19 11.883,19 11.883,18 13.941,18 13.941,19 14.971,19
+		14.971,20 16,20 16,21 14.971,21 14.971,22 13.941,22 13.941,23 11.883,23 11.883,22 12.912,22 12.912,21 	"/>
+</g>
+</svg>

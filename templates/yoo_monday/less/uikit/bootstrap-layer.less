@@ -1,0 +1,41 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/* ========================================================================
+   Name:            Bootstrap layer
+   Description:     Compatibility layer to match UIkit and Bootstrap style
+ ========================================================================== */
+
+@bs-input-height:           30px;
+@bs-dropdown-color:         #bcbcc1;
+@bs-tab-border:             #ddd;
+
+// Form overrides
+// ==========================================================================
+
+.input-append input,
+.input-prepend input {
+    height: @bs-input-height;
+    box-sizing: border-box;
+}
+
+.dropdown-menu > li > a { color: @bs-dropdown-color; }
+
+.tabs-below > .nav-tabs > li > a:hover { border-color: transparent transparent @bs-tab-border transparent; }
+
+.tabs-below > .nav-tabs > .active > a,
+.tabs-below > .nav-tabs > .active > a:hover,
+.tabs-below > .nav-tabs > .active > a:focus { border-bottom-color: @bs-tab-border; }
+
+.tabs-left > .nav-tabs > li > a { padding-left: 5px; }
+
+.tabs-left > .nav-tabs > li > a:hover { border-color: transparent transparent transparent @bs-tab-border; }
+
+.tabs-left > .nav-tabs > .active > a,
+.tabs-left > .nav-tabs > .active > a:hover,
+.tabs-left > .nav-tabs > .active > a:focus { border-left-color: @bs-tab-border; }
+
+.tabs-right > .nav-tabs > li > a:hover { border-color: transparent @bs-tab-border transparent transparent; }
+
+.tabs-right > .nav-tabs > .active > a,
+.tabs-right > .nav-tabs > .active > a:hover,
+.tabs-right > .nav-tabs > .active > a:focus { border-right-color: @bs-tab-border; }

@@ -1,0 +1,141 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Variables
+//
+// ========================================================================
+
+
+// Global variables
+// ========================================================================
+
+//
+// Text
+//
+
+@global-color:                                  #797e90;
+@global-muted-color:                            #5b5b6c;
+@global-highlight-color:                        #c3cce8;
+
+@global-text-shadow:                            rgba(0,0,0,0.1);
+
+@global-link-color:                             #2b95ee;
+@global-link-hover-color:                       lighten(@global-link-color, 20%);
+
+@global-primary-link-color:                     fade(@global-contrast-color, 65%);
+@global-primary-link-hover-color:               desaturate(darken(@global-primary-background, 25%), 10%);
+
+@global-contrast-color:                         #fff;
+
+@global-primary-color:                          #2b95ee;
+@global-secondary-color:                        #39c24f;
+@global-success-color:                          #39c24f;
+@global-warning-color:                          #f5872a;
+@global-danger-color:                           #ed3b40;
+
+@global-font-size:                              16px;
+@global-line-height:                            24px;
+@global-font-weight:                            300;
+@global-bold-font-weight:                       400;
+@global-heading-font-weight:                    300;
+@global-button-font-weight:                     300;
+@global-text-transform:                         uppercase;
+@global-letter-spacing:                         1px;
+
+//
+// Backgrounds & Borders
+//
+
+@global-background:                             #282832;
+@global-dark-background:                        #202029;
+@global-light-background:                       #30303c;
+@global-highlight-background:                   lighten(@global-light-background, 3%);
+
+@global-default-gradient-top:                   #474754;
+@global-default-gradient-bottom:                #3a3a47;
+@global-default-background:                     mix(@global-default-gradient-top, @global-default-gradient-bottom, 50%);
+@global-default-hover-background:               darken(@global-default-background, 1%);
+@global-default-active-background:              darken(@global-default-hover-background, 2%);
+@global-default-highlight:                      rgba(255,255,255,0.03);
+@global-default-shadow:                         rgba(0,0,0,0.1);
+@global-default-hover-shadow:                   rgba(0,0,0,0.2);
+@global-default-active-shadow:                  fade(desaturate(darken(@global-default-active-background, 10%), 8%), 30%);
+
+@global-primary-gradient-top:                   #38bcf9;
+@global-primary-gradient-bottom:                #3276f2;
+@global-primary-background:                     mix(@global-primary-gradient-top, @global-primary-gradient-bottom, 40%);
+@global-primary-hover-background:               desaturate(darken(@global-primary-background, 3%), 5%);
+@global-primary-active-background:              desaturate(darken(@global-primary-background, 6%), 8%);
+@global-primary-highlight:                      fade(#9ddeff, 20%);
+@global-primary-active-shadow:                  fade(desaturate(darken(@global-primary-active-background, 30%), 15%), 50%);
+
+@global-primary-intensive-gradient-top:         @global-primary-gradient-top;
+@global-primary-intensive-gradient-bottom:      #4840e5;
+
+@global-success-gradient-top:                   #51e257;
+@global-success-gradient-bottom:                #1c9c46;
+@global-success-background:                     mix(@global-success-gradient-top, @global-success-gradient-bottom, 40%);
+@global-success-hover-background:               desaturate(darken(@global-success-background, 3%), 5%);
+@global-success-active-background:              desaturate(darken(@global-success-background, 6%), 8%);
+@global-success-highlight:                      fade(#c1ffac, 20%);
+@global-success-active-shadow:                  fade(desaturate(darken(@global-success-active-background, 20%), 10%), 50%);
+
+@global-warning-gradient-top:                   #ffbd3f;
+@global-warning-gradient-bottom:                #ed601a;
+@global-warning-background:                     mix(@global-warning-gradient-top, @global-warning-gradient-bottom, 40%);
+@global-warning-hover-background:               desaturate(darken(@global-warning-background, 3%), 5%);
+@global-warning-active-background:              desaturate(darken(@global-warning-background, 6%), 8%);
+@global-warning-highlight:                      fade(#ffecac, 20%);
+@global-warning-active-shadow:                  fade(desaturate(darken(@global-warning-active-background, 20%), 15%), 50%);
+
+@global-danger-gradient-top:                    #f5543a;
+@global-danger-gradient-bottom:                 #bb153c;
+@global-danger-background:                      mix(@global-danger-gradient-top, @global-danger-gradient-bottom, 40%);
+@global-danger-hover-background:                desaturate(darken(@global-danger-background, 3%), 5%);
+@global-danger-active-background:               desaturate(darken(@global-danger-background, 6%), 8%);
+@global-danger-highlight:                       fade(#ffb8ac, 20%);
+@global-danger-active-shadow:                   fade(desaturate(darken(@global-danger-active-background, 10%), 15%), 70%);
+
+@global-border:                                 fade(#e6ecff, 3%);
+@global-border-width:                           2px;
+@global-border-radius:                          2px;
+
+//
+// Spacings
+//
+
+@global-margin:                                 25px;
+@global-margin-large:                           40px;
+@global-margin-extra-large:                     70px;
+@global-grid-gutter:                            25px;
+@global-grid-gutter-large:                      40px;
+@global-grid-gutter-small:                      15px;
+
+//
+// Controls
+//
+
+@global-height:                                 40px;
+@global-height-mini:                            25px;
+@global-height-small:                           35px;
+@global-height-large:                           50px;
+
+//
+// Z-index
+//
+
+@global-z-index:                                1000;
+
+//
+// Animations
+//
+
+@global-transition:                             all 0.1s ease-in-out;
+@global-hover-transform:                        scale(1.1);
+@global-active-transform:                       scale(0.9);
+
+//
+// Misc
+//
+
+@global-style:                                  'default';

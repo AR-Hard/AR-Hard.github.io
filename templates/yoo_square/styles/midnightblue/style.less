@@ -1,0 +1,103 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@import 'https://fonts.googleapis.com/css?family=Patua+One:400';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,300';
+
+// Variables
+// ========================================================================
+
+//
+// Typography
+//
+
+@global-muted-color: #525970;
+@global-link-color: #0ac6a2;
+@global-contrast-color: #ffffff;
+@global-font-size: 16px;
+@global-line-height: 26px;
+@base-heading-font-family: 'Patua One';
+
+//
+// Border
+//
+
+@global-border: rgba(255, 255, 255, 0.15);
+@global-hover-border: #bdbfc6;
+
+//
+// Backgrounds
+//
+
+@global-background: #2B344D;
+@global-light-background: #525970;
+@global-light-hover-background: rgba(255, 255, 255, 0.05);
+@global-secondary-background: #283044;
+@global-primary-background: #00c29d;
+@global-success-background: #28bc77;
+@global-warning-background: #edc050;
+@global-danger-background: #da4549;
+
+//
+// Base
+//
+
+@base-heading-font-family: 'Patua One';
+@base-em-color: #90facb;
+@base-heading-font-weight: 400;
+@base-h1-font-size: 54px;
+@base-h2-font-size: 46px;
+@base-h3-font-size: 38px;
+@base-h4-font-size: 30px;
+@base-h5-font-size: 22px;
+@base-h6-font-size: 18px;
+
+//
+// Button
+//
+
+@button-primary-hover-background: #ffffff;
+@button-primary-hover-color: #00c29d;
+@button-disabled-border: fade(@global-border, 40%);
+
+//
+// Form
+//
+
+@form-danger-background: fade(@global-danger-background, 3%);
+@form-success-background: fade(@global-success-background, 3%);
+@form-danger-border: desaturate(fade(lighten(@button-danger-background, 5%), 90%), 5%);
+
+//
+// Panel
+//
+
+@panel-box-primary-button-border: lighten(@global-border, 5%);
+
+//
+// Text
+//
+
+@text-warning-color: #edc050;
+@text-danger-color: #da4549;
+@text-success-color: #28bc77;
+@text-primary-color: #8aa9c8;
+
+
+// Theme Variables
+// ==========================================================================
+
+@theme_global-body-style: 'midnightblue';
+
+// Backgrounds
+@theme_global-block-dark-background: fade(darken(@global-secondary-background, 40%), 5%);
+
+// System Style
+@theme_system_color: #2b344d;
+@theme_system-link-color: @global-link-color;
+@theme_system-link-hover-color: lighten(@theme_system-link-color, 5%);
+@theme_system-global-border: #363D57;
+@theme_system-button-color: #2D344A;
+
+// Color Scroll
+@theme_scroll-start-color: @global-background;
+@theme_scroll-end-color: #1A2438;

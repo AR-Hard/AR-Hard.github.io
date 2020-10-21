@@ -1,0 +1,253 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Button
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@button-height:                                 @global-height;
+@button-mini-height:                            @global-height-mini;
+@button-small-height:                           @global-height-small;
+@button-large-height:                           @global-height-large;
+
+@button-line-height:                            @global-height;
+@button-mini-line-height:                       @global-height-mini;
+@button-small-line-height:                      @global-height-small;
+@button-large-line-height:                      @global-height-large;
+
+@button-mini-font-size:                         12px;
+@button-small-font-size:                        13px;
+@button-large-font-size:                        15px;
+
+@button-background:                             @global-default-background;
+@button-color:                                  @global-highlight-color;
+@button-hover-background:                       @global-default-hover-background;
+@button-hover-color:                            @button-color;
+@button-active-background:                      @global-default-active-background;
+@button-active-color:                           fade(@button-color, 65%);
+
+@button-primary-background:                     @global-primary-background;
+@button-primary-color:                          @global-contrast-color;
+@button-primary-hover-background:               @global-primary-hover-background;
+@button-primary-hover-color:                    @button-primary-color;
+@button-primary-active-background:              @global-primary-active-background;
+@button-primary-active-color:                   fade(@button-primary-color, 65%);
+
+@button-success-background:                     @global-success-background;
+@button-success-color:                          @global-contrast-color;
+@button-success-hover-background:               @global-success-hover-background;
+@button-success-hover-color:                    @global-contrast-color;
+@button-success-active-background:              @global-success-active-background;
+@button-success-active-color:                   fade(@global-contrast-color, 65%);
+
+@button-danger-background:                      @global-danger-background;
+@button-danger-color:                           @global-contrast-color;
+@button-danger-hover-background:                @global-danger-hover-background;
+@button-danger-hover-color:                     @global-contrast-color;
+@button-danger-active-background:               @global-danger-active-background;
+@button-danger-active-color:                    fade(@global-contrast-color, 65%);
+
+@button-disabled-background:                    fade(@global-default-background, 50%);
+@button-disabled-color:                         @global-muted-color;
+
+@button-link-color:                             @global-link-color;
+@button-link-hover-color:                       @global-link-hover-color;
+@button-link-disabled-color:                    @global-muted-color;
+
+//
+// New
+//
+
+@button-default-gradient-top:                   @global-default-gradient-top;
+@button-default-gradient-bottom:                @global-default-gradient-bottom;
+
+@button-primary-gradient-top:                   @global-primary-gradient-top;
+@button-primary-gradient-bottom:                @global-primary-gradient-bottom;
+
+@button-success-gradient-top:                   @global-success-gradient-top;
+@button-success-gradient-bottom:                @global-success-gradient-bottom;
+
+@button-danger-gradient-top:                    @global-danger-gradient-top;
+@button-danger-gradient-bottom:                 @global-danger-gradient-bottom;
+
+@button-padding-horizontal:                     round((@button-height / 1.2));
+@button-large-padding-horizontal:               round((@button-large-height / 1.2));
+@button-small-padding-horizontal:               round((@button-small-height / 1.2));
+@button-mini-padding-horizontal:                round((@button-mini-height / 1.2));
+
+@button-group-padding-horizontal:               (@button-height / 2);
+@button-group-large-padding-horizontal:         (@button-large-height / 2);
+@button-group-small-padding-horizontal:         (@button-small-height / 2);
+@button-group-mini-padding-horizontal:          (@button-mini-height / 2);
+
+@button-border-radius:                          @button-height;
+@button-large-border-radius:                    @button-large-height;
+
+@button-font-family:                            'Roboto', Helvetica, Arial, sans-serif;
+@button-font-size:                              14px;
+@button-font-weight:                            @global-button-font-weight;
+@button-text-transform:                         @global-text-transform;
+@button-letter-spacing:                         @global-letter-spacing;
+
+@button-group-border-witdth:                    1px;
+@button-group-border:                           rgba(0,0,0,0.1);
+
+
+// Mixins
+// ========================================================================
+
+.button-gradient (@startColor: @button-default-gradient-top, @endColor: @button-default-gradient-bottom) {
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor);
+    background-image: linear-gradient(to bottom, @startColor, @endColor);
+}
+
+
+// Component
+// ========================================================================
+
+.hook-button() {
+    padding: 0 @button-padding-horizontal;
+    border-radius: @button-border-radius;
+    .button-gradient;
+    background-origin: border-box;
+    box-shadow: inset 1px 1px 0 @global-default-highlight, 1px 1px 1px @global-default-shadow;
+    font-family: @button-font-family;
+    font-size: @button-font-size;
+    font-weight: @button-font-weight;
+    text-shadow: 1px 1px 1px @global-text-shadow;
+    text-transform: @button-text-transform;
+    letter-spacing: @button-letter-spacing;
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+}
+
+.hook-button-hover() {
+    background-image: none;
+    box-shadow: 1px 2px 3px @global-default-shadow;
+}
+
+.hook-button-active() { box-shadow: inset 2px 2px 6px @global-default-active-shadow; }
+
+
+// Color modifiers
+// ========================================================================
+
+//
+// Modifier: `uk-button-primary`
+//
+
+.hook-button-primary() {
+
+    .button-gradient(@startColor: @button-primary-gradient-top, @endColor: @button-primary-gradient-bottom);
+    box-shadow: inset 1px 1px 0 @global-primary-highlight, 1px 1px 1px @global-default-shadow;
+
+}
+
+.hook-button-primary-hover() {}
+.hook-button-primary-active() { box-shadow: inset 2px 2px 6px @global-primary-active-shadow; }
+
+//
+// Modifier: `uk-button-success`
+//
+
+.hook-button-success() {
+
+    .button-gradient(@startColor: @button-success-gradient-top, @endColor: @button-success-gradient-bottom);
+    box-shadow: inset 1px 1px 0 @global-success-highlight, 1px 1px 1px @global-default-shadow;
+
+}
+
+.hook-button-success-hover() {}
+.hook-button-success-active() { box-shadow: inset 2px 2px 6px @global-success-active-shadow; }
+
+//
+// Modifier: `uk-button-danger`
+//
+
+.hook-button-danger() {
+
+    .button-gradient(@startColor: @button-danger-gradient-top, @endColor: @button-danger-gradient-bottom);
+    box-shadow: inset 1px 1px 0 @global-danger-highlight, 1px 1px 1px @global-default-shadow;
+
+}
+
+.hook-button-danger-hover() {}
+.hook-button-danger-active() { box-shadow: inset 2px 2px 6px @global-danger-active-shadow; }
+
+
+// Disabled state
+// ========================================================================
+
+.hook-button-disable() {
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+
+// Modifier: `uk-button-link`
+// ========================================================================
+
+.hook-button-link() {
+    box-shadow: none;
+    text-shadow: none;
+}
+
+
+// Size modifiers
+// ========================================================================
+
+.hook-button-large() {
+    padding: 0 @button-large-padding-horizontal;
+    border-radius: @button-large-border-radius;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-button-misc() {
+
+    .uk-button-small { padding: 0 @button-small-padding-horizontal; }
+    .uk-button-mini { padding: 0 @button-mini-padding-horizontal; }
+
+    // Sub-object `uk-button-group`
+    // ==========================================================================
+
+    // Reset border-radius
+    .uk-button-group > .uk-button:not(:first-child):not(:last-child),
+    .uk-button-group > div:not(:first-child):not(:last-child) .uk-button { border-radius: 0; }
+
+    .uk-button-group > .uk-button:first-child,
+    .uk-button-group > div:first-child .uk-button {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .uk-button-group > .uk-button:last-child,
+    .uk-button-group > div:last-child .uk-button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    // Collapse border
+    .uk-button-group > .uk-button:nth-child(n+2),
+    .uk-button-group > div:nth-child(n+2) .uk-button { border-left: @button-group-border-witdth solid @button-group-border; }
+
+    .uk-button-group .uk-button:active { position: relative; }
+
+    // Padding
+    .uk-button-group {
+
+        .uk-button { padding: 0 @button-group-padding-horizontal; }
+        .uk-button-large { padding: 0 @button-group-large-padding-horizontal; }
+        .uk-button-small { padding: 0 @button-group-small-padding-horizontal; }
+        .uk-button-mini { padding: 0 @button-group-mini-padding-horizontal; }
+
+    }
+
+}

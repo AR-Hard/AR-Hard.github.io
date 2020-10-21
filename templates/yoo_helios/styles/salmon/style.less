@@ -1,0 +1,246 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@import 'https://fonts.googleapis.com/css?family=Nunito:300';
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+pro:300,400,700';
+
+
+// Variables
+// ========================================================================
+
+//
+// Text
+//
+
+@global-color:                                  #706b67;
+@global-muted-color:                            #b3aeab;
+@global-highlight-color:                        #3c3630;
+
+@global-text-shadow:                            rgba(0,0,0,0);
+
+@global-link-color:                             #f26e58;
+@global-link-hover-color:                       darken(@global-link-color, 15%);
+
+@global-primary-color:                          #f26e58;
+@global-secondary-color:                        #6079a8;
+@global-success-color:                          #789a36;
+@global-warning-color:                          #6079a8;
+@global-danger-color:                           #d25f5c;
+
+@global-font-weight:                            300;
+@global-bold-font-weight:                       400;
+@global-heading-font-weight:                    300;
+@global-button-font-weight:                     300;
+
+//
+// Backgrounds & Borders
+//
+
+@global-background:                             #f6f6f4;
+@global-dark-background:                        #ecece9;
+@global-light-background:                       #fbfbfa;
+@global-highlight-background:                   lighten(@global-light-background, 1%);
+
+@global-default-gradient-top:                   #5d5249;
+@global-default-gradient-bottom:                #5d5249;
+@global-default-background:                     mix(@global-default-gradient-top, @global-default-gradient-bottom, 50%);
+@global-default-hover-background:               lighten(@global-default-background, 5%);
+@global-default-highlight:                      rgba(255,255,255,0);
+@global-default-shadow:                         rgba(0,0,0,0);
+@global-default-hover-shadow:                   rgba(0,0,0,0);
+
+@global-primary-gradient-top:                   #ff8d65;
+@global-primary-gradient-bottom:                #e95d45;
+@global-primary-highlight:                      rgba(255,255,255,0);
+
+@global-primary-intensive-gradient-top:         @global-primary-gradient-top;
+@global-primary-intensive-gradient-bottom:      @global-primary-gradient-bottom;
+
+@global-success-gradient-top:                   #afd467;
+@global-success-gradient-bottom:                #afd467;
+@global-success-highlight:                      rgba(255,255,255,0);
+
+@global-warning-gradient-top:                   #f0c66d;
+@global-warning-gradient-bottom:                #f0c66d;
+@global-warning-highlight:                      rgba(255,255,255,0);
+
+@global-danger-gradient-top:                    #d25f5c;
+@global-danger-gradient-bottom:                 #d25f5c;
+@global-danger-highlight:                       rgba(255,255,255,0);
+
+@global-border:                                 fade(#3b332f, 6%);
+@global-border-width:                           1px;
+
+
+
+//
+// Base
+//
+
+@base-ins-background:                           #e4ffea;
+@base-mark-background:                          #fffac4;
+
+@base-body-font-family:                         'Source Sans Pro', Helvetica, Arial, sans-serif;
+@base-heading-font-family:                      'Nunito', Helvetica, Arial, sans-serif;
+
+//
+// Button
+//
+
+@button-color:                                  @global-contrast-color;
+@button-disabled-background:                    @global-light-background;
+@button-group-border:                           rgba(0,0,0,0.05);
+@button-font-family:                            'Nunito', Helvetica, Arial, sans-serif;
+
+//
+// Close
+//
+
+@close-color:                                   @global-highlight-color;
+@close-alt-active-shadow:                       rgba(0,0,0,0.1);
+
+//
+// Datepicker
+//
+
+@datepicker-table-hover-background:             @global-highlight-background;
+
+//
+// Dotnav
+//
+
+@dotnav-contrast-onclick-background:            @global-highlight-color;
+
+@dotnav-contrast-border:                        fade(@global-highlight-color, 50%);
+@dotnav-contrast-hover-border:                  @global-highlight-color;
+
+//
+// Form
+//
+
+@form-border:                                   @global-border;
+@form-blank-border:                             @global-primary-background;
+
+//
+// HTML Editor
+//
+
+@htmleditor-navbar-nav-active-background:       @global-primary-background;
+@htmleditor-navbar-nav-active-color:            @global-contrast-color;
+
+//
+// Nav
+//
+
+@nav-dropdown-active-background:                rgba(0,0,0,0.03);
+@nav-dropdown-active-color:                     @global-highlight-color;
+
+@nav-navbar-active-color:                       @global-primary-color;
+
+@nav-side-hover-background:                     @global-dark-background;
+
+//
+// Navbar
+//
+
+@navbar-nav-before-hover-background:            @global-primary-background;
+@navbar-nav-font-family:                        'Nunito', Helvetica, Arial, sans-serif;
+
+//
+// Nestable
+//
+
+@nestable-handle-color:                         fade(@global-highlight-color, 15%);
+@nestable-toggle-color:                         fade(@global-highlight-color, 15%);
+@nestable-toggle-hover-color:                   fade(@global-highlight-color, 70%);
+@nestable-icon-text-shadow:                     rgba(255,255,255,1);
+
+//
+// Offcanvas
+//
+
+@nav-offcanvas-hover-color:                     @global-highlight-color;
+@nav-offcanvas-margin:                          1px;
+@offcanvas-after-background:                    rgba(0,0,0,0.1);
+@offcanvas-after-shadow:                        rgba(0,0,0,0.06);
+
+//
+// Overlay
+//
+
+@overlay-panel-color:                           @global-contrast-color;
+@overlay-icon-color:                            @global-contrast-color;
+
+@overlay-button-border:                         @global-contrast-color;
+@overlay-button-background:                     fade(@global-contrast-color, 0%);
+@overlay-button-color:                          @global-contrast-color;
+
+@overlay-button-hover-background:               @global-contrast-color;
+@overlay-button-hover-color:                    @global-primary-color;
+
+//
+// Pagination
+//
+
+@pagination-background:                         darken(@global-dark-background, 4%);
+@pagination-hover-background:                   darken(@global-dark-background, 8%);
+
+//
+// Panel
+//
+
+@panel-box-secondary-border:                    darken(@panel-box-secondary-background, 10%);
+
+//
+// Progress
+//
+
+@progress-inner-shadow:                         rgba(0,0,0,0);
+@progress-drop-shadow:                          rgba(255,255,255,0);
+
+//
+// Search
+//
+
+@search-color:                                  @global-highlight-color;
+@search-placeholder-color:                      fade(@global-highlight-color, 50%);
+
+@search-icon-color:                             @global-highlight-color;
+
+@offcanvas-search-border:                       darken(@offcanvas-bar-background, 5%);
+@offcanvas-search-focus-border:                 darken(@offcanvas-search-border, 10%);
+
+//
+// Subnav
+//
+
+@subnav-pill-hover-color:                       @global-primary-color;
+
+//
+// Tab
+//
+
+@tab-before-hover-background:                   fade(@global-highlight-color, 50%);
+
+
+// Theme Variables
+// ========================================================================
+
+@theme-global-body-style:                       'salmon';
+
+@theme-header-color:                            #ffe5df;
+
+@theme-navbar-button-border:                    @theme-header-color;
+@theme-navbar-button-background:                @theme-navbar-button-border;
+@theme-navbar-button-color:                     @global-primary-color;
+
+@theme-navbar-button-hover-border:              @global-contrast-color;
+@theme-navbar-button-hover-background:          @global-contrast-color;
+@theme-navbar-button-hover-color:               @theme-navbar-button-color;
+
+@theme-navbar-button-active-border:             @global-contrast-color;
+@theme-navbar-button-active-background:         rgba(0,0,0,0);
+@theme-navbar-button-active-color:              @global-contrast-color;
+
+@theme-dropdown-navbar-shadow:                  0 1px 2px rgba(0,0,0,0.09);
+
+@theme-blog-image-single-background:            @global-highlight-color;

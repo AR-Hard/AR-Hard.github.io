@@ -1,0 +1,76 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Article component
+//
+// ==========================================================================
+
+
+// Variables
+// ========================================================================
+
+@article-margin-top:                            @global-margin-large;
+
+@article-title-font-size:                       round((@global-font-size * 2.57));
+@article-title-line-height:                     round((@article-title-font-size * 1.16));
+@article-title-font-weight:                     @base-heading-font-weight;
+@article-title-text-transform:                  @base-heading-text-transform;
+
+@article-meta-font-size:                        @global-small-font-size;
+@article-meta-line-height:                      round((@article-meta-font-size * 1.5));
+@article-meta-color:                            @global-muted-color;
+
+@article-lead-color:                            @global-color;
+@article-lead-font-size:                        round((@global-font-size * 1.28));
+@article-lead-line-height:                      round((@article-lead-font-size * 1.33));
+
+@article-divider-margin:                        @global-margin-large;
+@article-divider-border:                        @global-border;
+
+//
+// New
+//
+
+@article-meta-font-family:                      @global-small-font-family;
+@article-meta-font-weight:                      @global-small-font-weight;
+
+
+// Component
+// ==========================================================================
+
+
+// Sub-object `uk-article-title`
+// ==========================================================================
+
+.hook-article-title() {}
+
+
+// Sub-object `uk-article-meta`
+// ==========================================================================
+
+.hook-article-meta() {
+    font-family: @article-meta-font-family;
+    font-weight: @article-meta-font-weight;
+}
+
+
+// Sub-object `uk-article-lead`
+// ==========================================================================
+
+.hook-article-lead() { font-style: italic; }
+
+
+// Sub-object `uk-article-divider`
+// ==========================================================================
+
+.hook-article-divider() { }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-article-misc() {
+
+    .uk-article-title > a { background: none; }
+
+}

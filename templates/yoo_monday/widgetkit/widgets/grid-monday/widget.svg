@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-grid-monday" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+<g>
+	<path fill="#D85349" d="M1,19.974v1.042V35h18V21.016v-1.042V5.016H1V19.974z M17,28.554v2.12V33H3v-2.137v-2.119V21h14V28.554z
+		 M3,7.016h14v7.58l-2.439-2.44l-2.25,2.25L7.84,9.936L3,14.786V7.016z M3,16.906l4.84-4.85l5.77,5.78l1.061-1.06l-1.3-1.31
+		l1.19-1.19L17,16.716V19H3V16.906z"/>
+	<path fill="#D85349" d="M39,35v-0.932V18.984H21v15.084V35 M23,34.984h14 M23,20.984h14v7.58l-2.439-2.439l-2.25,2.25l-4.471-4.471
+		L23,28.754V20.984z M23,30.875l4.84-4.851l5.77,5.78l1.063-1.061l-1.3-1.31l1.188-1.19L37,30.685V33H23V30.875z"/>
+	<g>
+		<polyline fill="#D85349" points="5.5,24.016 14.5,24.016 14.5,26.016 5.5,26.016 		"/>
+		<polyline fill="#D85349" points="5.5,28.016 13.5,28.016 13.5,30.016 5.5,30.016 		"/>
+	</g>
+	<g>
+		<polyline fill="#D85349" points="25.5,10.14 34.5,10.14 34.5,12.14 25.5,12.14 		"/>
+		<polyline fill="#D85349" points="25.5,14.14 33.5,14.14 33.5,16.14 25.5,16.14 		"/>
+	</g>
+	<path fill="#D85349" d="M21,5.016v2V21h18V7.016v-2 M37,14.554v2.12V19H23v-2.137v-2.119V7.016h14V14.554z"/>
+</g>
+</svg>

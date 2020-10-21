@@ -1,0 +1,140 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Tab
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@tab-border:                                    rgba(0,0,0,0);
+@tab-border-width:                              0;
+@tab-padding-horizontal:                        0;
+@tab-padding-vertical:                          10px;
+@tab-margin-horizontal:                         20px;
+@tab-margin-vertical:                           0;
+@tab-color:                                     @global-color;
+@tab-hover-border:                              @tab-color;
+@tab-hover-background:                          rgba(0,0,0,0);
+@tab-hover-color:                               @tab-color;
+@tab-active-border:                             @tab-color;
+@tab-active-background:                         rgba(0,0,0,0);
+@tab-active-color:                              @tab-color;
+@tab-disabled-color:                            @global-muted-color;
+
+//
+// New
+//
+
+@tab-hover-border-width:                        @global-alt-border-width;
+@tab-hover-border-background:                   @global-primary-color;
+@tab-font-family:                               @global-font-family;
+
+
+// Component
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-tab() {
+
+    position: relative;
+    font-family: @tab-font-family;
+    -webkit-transition: height,width .2s ease;
+    transition: height,width .2s ease;
+    padding: @global-margin-large !important;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: @tab-hover-border-width;
+        width: 0;
+        background: @tab-hover-border-background;
+        transition-duration: .5s,.25s;
+    }
+
+}
+
+// Hover
+.hook-tab-hover() {
+
+    &:after {
+        width: 100%;
+        left: 0;
+    }
+
+}
+
+// Active
+.hook-tab-active() {
+
+    &:after {
+        width: 100%;
+    }
+
+}
+
+// Disabled
+.hook-tab-disabled() {
+
+    &:after { background: transparent; }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-tab-misc() {
+
+    // Tab modifiers
+    // ========================================================================
+    .uk-tab-right > li > a:after {
+        left: auto !important;
+        right: 0;
+        height: 0;
+        width: @tab-hover-border-width !important;
+    }
+
+    .uk-tab-left > li > a:after {
+        left: 0;
+        right: auto;
+        height: 0;
+        width: @tab-hover-border-width !important;
+    }
+
+    .uk-tab-right > li > a:hover:after,
+    .uk-tab-right > li.uk-active > a:after,
+    .uk-tab-left > li > a:hover:after,
+    .uk-tab-left > li.uk-active > a:after {
+        top: 0;
+        height: 100%;
+    }
+
+    .uk-tab-responsive > a:before {
+        content: '\e903';
+        font-family: @global-icon-font-family;
+        padding-right: 20px;
+    }
+
+    .uk-tab-right > .uk-tab-responsive.uk-active > a:after {
+        left: 0 !important;
+        right: auto;
+    }
+
+    .uk-tab-responsive .uk-dropdown {
+        width: 100%;
+        margin: 0;
+        padding-top: 0;
+        padding-bottom:0;
+    }
+
+    .uk-tab .uk-nav > li > a { padding: 20px 30px; }
+}

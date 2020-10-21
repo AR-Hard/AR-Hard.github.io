@@ -1,0 +1,109 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@import 'https://fonts.googleapis.com/css?family=Oleo+Script';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,300';
+
+// Variables
+// ========================================================================
+
+//
+// Typography
+//
+
+@global-muted-color: rgba(255, 139, 141, 0.7);
+@global-link-color: #912724;
+@global-link-hover-color: #ffffff;
+@global-contrast-color: #ffffff;
+@base-heading-font-family: 'Oleo Script';
+
+//
+// Border
+//
+
+@global-border: rgba(255, 139, 141, 0.5);
+@global-hover-border: #FCB8B7;
+
+//
+// Backgrounds
+//
+
+@global-background: #eb4441;
+@global-light-background: #f36357;
+@global-light-hover-background: rgba(255, 255, 255, 0.07);
+@global-secondary-background: rgba(189, 57, 54, 0.68);
+@global-primary-background: #b23434;
+@global-success-background: #62bb58;
+@global-warning-background: #edc050;
+@global-danger-background: #b7222c;
+
+//
+// Base
+//
+
+@base-heading-font-family: 'Oleo Script';
+@base-em-color: #302d26;
+
+//
+// Button
+//
+
+@button-primary-hover-background: #302d26;
+@button-danger-hover-background: saturate(lighten(@button-danger-background, 5%), 3%);
+@button-success-hover-background: saturate(lighten(@button-success-background, 7%), 8%);
+@button-disabled-border: fade(@global-border, 80%);
+
+//
+// Form
+//
+
+@form-focus-border: lighten(@global-hover-border, 5%);
+@form-danger-border: darken(fade(@button-danger-background, 40%), 7%);
+@form-success-border: fade(lighten(@button-success-background, 12%), 90%);
+@form-success-background: fade(@global-success-background, 5%);
+@form-disabled-border: fade(@global-border, 50%);
+
+//
+// Offcanvas
+//
+
+@offcanvas-search-field-focus-border: @global-hover-border;
+
+//
+// Text
+//
+
+@text-warning-color: #fdea7c;
+@text-success-color: #9cdb97;
+@text-danger-color: #912724;
+@text-primary-color: #ffe9e8;
+
+//
+// Utility
+//
+
+@utility-heading-large-font-size: round(@global-font-size * 4.5);
+@utility-heading-large-line-height: round(@utility-heading-large-font-size * 1.09);
+@utility-heading-large-text-transform: none;
+
+//
+// Caption
+//
+
+@caption-link-color: lighten(@global-link-color, 25%);
+
+
+// Theme Variables
+// ==========================================================================
+
+@theme_global-body-style: 'red';
+
+// System Style
+@theme_system_color: #972424;
+@theme_system-link-color: #DB2A2A;
+@theme_system-link-hover-color: saturate(@theme_system-link-color, 30%);
+@theme_system-global-border: #B41111;
+@theme_system-button-color: #b82929;
+
+// Color Scroll
+@theme_scroll-start-color: @global-background;
+@theme_scroll-end-color: #EE475E;

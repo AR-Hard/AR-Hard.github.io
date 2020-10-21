@@ -1,0 +1,96 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@bs-input-height: 			22px;
+
+/* Button overrides
+ ========================================================================== */
+
+.btn-group > .btn,
+.btn-group > .dropdown-menu,
+.btn-group > .popover { font-size: @button-font-size; }
+
+
+/* Label overrides
+ ========================================================================== */
+
+// Reset border-radius
+.label, 
+.badge {
+	.border-radius(0);
+	padding-left: 0;
+	padding-right: 0;
+	text-transform: uppercase; 
+}
+
+
+/* Nav overrides
+ ========================================================================== */
+
+// TABS AND PILLS
+// -------------
+
+// Actual tabs (as links)
+.nav-tabs:not(.nav-stacked) > li { position: relative; }
+.nav-tabs:not(.nav-stacked) > li > a { border: none; }
+
+.nav-tabs:not(.nav-stacked) > li > a {
+
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 2px;
+	}
+
+}
+
+.nav-tabs > .active > a:after { bottom: 0; }
+
+.tabs-below .nav-tabs > li > a {
+
+	&:after {
+		top: 0;
+	}
+
+}
+
+.tabs-left .nav-tabs > li > a {
+
+	&:after {
+		top: 0;
+		right: -1px;
+		left: auto;
+		height: auto;
+		width: 2px;
+	}
+
+}
+
+.tabs-right .nav-tabs > li > a {
+
+	&:after {
+		top: 0;
+		left: -1px;
+		right: auto;
+		height: auto;
+		width: 2px;
+	}
+
+}
+
+// Active state, and it's :hover/:focus to override normal :hover/:focus
+.nav-tabs:not(.nav-stacked) > .active > a,
+.nav-tabs:not(.nav-stacked) > .active > a:hover,
+.nav-tabs:not(.nav-stacked) > .active > a:focus { border: none; }
+
+
+.nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle,
+.nav > li.dropdown.open.active > a:hover,
+.nav > li.dropdown.open.active > a:focus {
+	color: @global-color;
+	background-color: transparent;
+}

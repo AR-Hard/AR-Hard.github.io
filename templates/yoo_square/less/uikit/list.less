@@ -1,0 +1,48 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// List component
+//
+// ===========================================================================
+
+// Variables
+// ========================================================================
+
+@list-line-border:                          @global-border;
+@list-striped-background:                   @global-light-background;
+
+//
+// New
+//
+
+@list-line-border-width:                    @global-small-border-width;
+@list-line-border-style:                    dotted;
+
+
+// Component
+// ===========================================================================
+
+
+
+// Modifier: `list-line`
+// ===========================================================================
+
+.hook-list-line() {
+    border-top-width: @list-line-border-width; 
+    border-top-style: @list-line-border-style;
+}
+
+// Modifier: `list-striped`
+// ===========================================================================
+
+.hook-list-striped() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-list-misc() {
+
+    .uk-list a { color: @global-color; }
+
+}

@@ -1,0 +1,57 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+// Name:            Helios Icons
+// Description:     Defines styles for custom helios icons
+//
+// Component:       `tm-icon-helios-*`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@theme-icon-font-path:                          "../../fonts";
+
+
+// Component
+// ========================================================================
+
+@font-face {
+    font-family: 'helios';
+    src:    url('@{theme-icon-font-path}/helios.eot');
+    src:    url('@{theme-icon-font-path}/helios.eot?#iefix') format('embedded-opentype'),
+            url('@{theme-icon-font-path}/helios.woff') format('woff'),
+            url('@{theme-icon-font-path}/helios.ttf') format('truetype'),
+            url('@{theme-icon-font-path}/helios.svg#helios') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="tm-icon-helios-"],
+[class*=" tm-icon-helios-"] {
+    font-family: 'helios';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Icons
+.tm-icon-helios-arrow_down:before { content: "\e600"; }
+.tm-icon-helios-arrow_up:before { content: "\e601"; }
+.tm-icon-helios-bulb:before { content: "\e602"; }
+.tm-icon-helios-calendar:before { content: "\e603"; }
+.tm-icon-helios-chart:before { content: "\e604"; }
+.tm-icon-helios-close:before { content: "\e605"; }
+.tm-icon-helios-drop:before { content: "\e606"; }
+.tm-icon-helios-menu:before { content: "\e607"; }
+.tm-icon-helios-minus:before { content: "\e608"; }
+.tm-icon-helios-plus:before { content: "\e609"; }
+.tm-icon-helios-search:before { content: "\e60a"; }
+.tm-icon-helios-settings:before { content: "\e60b"; }
+.tm-icon-helios-wifi:before { content: "\e60c"; }

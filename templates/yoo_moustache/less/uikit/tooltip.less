@@ -1,0 +1,94 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Tooltip component
+//
+// ==========================================================================
+
+
+// Variables
+// ========================================================================
+
+@tooltip-z-index:                       (@global-z-index + 30);
+@tooltip-background:                    @global-background;
+
+@tooltip-color:                         @global-color;
+@tooltip-font-size:                     round((@global-font-size * 0.86));
+@tooltip-line-height:                   round((@tooltip-font-size * 1.13));
+
+//
+// New
+//
+
+@tooltip-border:                        @global-border;
+
+
+// Component
+// ==========================================================================
+
+.hook-tooltip() {
+    padding: 10px 15px;
+    border: 1px solid @tooltip-border;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-tooltip-misc() {
+
+    .uk-tooltip:after { border-color: @tooltip-border; }
+
+
+    /* Direction modifiers
+     ========================================================================== */
+
+    /*
+     * Top
+     */
+
+    .uk-tooltip-top:after,
+    .uk-tooltip-top-left:after,
+    .uk-tooltip-top-right:after {
+        border-bottom: none;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-top-color: @tooltip-border;
+    }
+
+    /*
+     * Bottom
+     */
+
+    .uk-tooltip-bottom:after,
+    .uk-tooltip-bottom-left:after,
+    .uk-tooltip-bottom-right:after {
+        border-top: none;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: @tooltip-border;
+    }
+
+    /*
+     * Left
+     */
+
+    .uk-tooltip-left:after {
+        border-right: none;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: @tooltip-border;
+    }
+
+    /*
+     * Right
+     */
+
+    .uk-tooltip-right:after {
+        border-left: none;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-right-color: @tooltip-border;
+    }
+
+}

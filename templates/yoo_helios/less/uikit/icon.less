@@ -1,0 +1,86 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Icon
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@icon-button-width:                             42px;
+@icon-button-height:                            @icon-button-width;
+@icon-button-border-radius:                     50%;
+@icon-button-font-size:                         20px;
+@icon-button-background:                        rgba(0,0,0,0);
+@icon-button-color:                             @global-highlight-color;
+
+@icon-hover-color:                              @global-muted-color;
+@icon-hover-hover-color:                        @global-highlight-color;
+
+@icon-button-hover-background:                  @global-primary-background;
+@icon-button-hover-color:                       @global-primary-color;
+
+@icon-button-active-background:                 rgba(0,0,0,0);
+@icon-button-active-color:                      @global-contrast-color;
+
+//
+// New
+//
+
+@icon-button-border-width:                      @global-border-width;
+@icon-button-margin-horizontal:                 4px;
+
+@icon-gradient-top:                             @global-primary-intensive-gradient-top;
+@icon-gradient-bottom:                          @global-primary-intensive-gradient-bottom;
+
+
+// Modifier: `uk-icon-button`
+// ========================================================================
+
+.hook-icon-button() {
+
+    position: relative;
+    margin: auto @icon-button-margin-horizontal;
+    padding: @icon-button-border-width;
+    z-index: 2;
+    line-height: @icon-button-height - 4px;
+    text-shadow: 1px 1px 1px @global-text-shadow;
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: @icon-button-border-width;
+        right: @icon-button-border-width;
+        bottom: @icon-button-border-width;
+        left: @icon-button-border-width;
+        border-radius: @icon-button-border-radius;
+        background: @global-background;
+        z-index: 1;
+    }
+
+}
+
+// Hover
+.hook-icon-button-hover() {
+    background-image: -webkit-linear-gradient(top, @icon-gradient-bottom, @icon-gradient-top);
+    background-image: linear-gradient(to bottom, @icon-gradient-bottom, @icon-gradient-top);
+}
+
+// Active
+.hook-icon-button-active() {
+
+    box-shadow: inset 1px 1px 3px @global-primary-active-shadow;
+
+    &::before { background: @icon-button-active-background; }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-icon-misc() {}

@@ -1,0 +1,87 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Overlay
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@overlay-panel-background:                      fade(@global-primary-background, 70%);
+@overlay-panel-color:                           @global-contrast-color;
+
+@overlay-icon:                                  "\e609";
+@overlay-icon-size:                             32px;
+@overlay-icon-color:                            @global-contrast-color;
+
+//
+// New
+//
+
+@overlay-button-border-width:                   @global-border-width;
+@overlay-button-border:                         @global-contrast-color;
+@overlay-button-background:                     fade(@global-contrast-color, 0%);
+@overlay-button-color:                          @global-contrast-color;
+
+@overlay-button-hover-border:                   @overlay-button-hover-background;
+@overlay-button-hover-background:               @global-contrast-color;
+@overlay-button-hover-color:                    @global-color;
+
+@overlay-button-active-border:                  rgba(0,0,0,0);
+@overlay-button-active-background:              rgba(0,0,0,0.8);
+@overlay-button-active-color:                   @global-contrast-color;
+
+
+// Sub-object `uk-overlay-panel`
+// ========================================================================
+
+.hook-overlay-panel() {
+
+    // uk-button in uk-overlay-background
+    .uk-button {
+        border: @overlay-button-border-width solid @overlay-button-border;
+        border-color: @overlay-button-border;
+        background: @overlay-button-background;
+        box-shadow: none;
+        color: @overlay-button-color;
+        text-shadow: none;
+        -webkit-transition: @global-transition;
+        transition: @global-transition;
+
+        // Hover event
+        &:hover {
+            border-color: @overlay-button-hover-border;
+            background: @overlay-button-hover-background;
+            color: @overlay-button-hover-color;
+        }
+
+        // Click event
+        &:active {
+            border-color: @overlay-button-active-border;
+            background: @overlay-button-active-background;
+            color: @overlay-button-active-color;
+        }
+
+    }
+
+}
+
+
+// Sub-object `uk-overlay-background`
+// ========================================================================
+
+.hook-overlay-background() {}
+
+
+// Sub-object `uk-overlay-icon`
+// ========================================================================
+
+.hook-overlay-icon() { font-family: 'helios'; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-overlay-misc() {}

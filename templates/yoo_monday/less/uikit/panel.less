@@ -1,0 +1,331 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Panel
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@panel-title-margin-bottom:                           @global-margin;
+@panel-title-font-size:                               round((@global-font-size * 1.13)); // 17px
+@panel-title-line-height:                             round((@panel-title-font-size * 1.35)); // 23px
+@panel-title-font-weight:                             @global-font-weight;
+@panel-title-color:                                   @global-color;
+@panel-title-text-transform:                          none;
+
+@panel-box-padding:                                   @global-padding;
+@panel-box-background:                                @global-light-background;
+@panel-box-color:                                     @global-color;
+@panel-box-title-color:                               @global-color;
+@panel-box-badge-top:                                 0;
+@panel-box-badge-right:                               0;
+
+@panel-box-primary-background:                        @global-primary-background;
+@panel-box-primary-color:                             @global-contrast-color;
+@panel-box-primary-title-color:                       @global-contrast-color;
+
+@panel-box-secondary-background:                      @global-secondary-background;
+@panel-box-secondary-color:                           @global-contrast-color;
+@panel-box-secondary-title-color:                     @global-contrast-color;
+
+@panel-hover-padding:                                 @global-padding;
+@panel-hover-hover-background:                        @global-light-background;
+@panel-hover-color:                                   @global-color;
+@panel-hover-hover-color:                             @global-color;
+@panel-hover-badge-top:                               0;
+@panel-hover-badge-right:                             0;
+
+@panel-header-title-border:                           rgba(0,0,0,0);
+@panel-header-title-color:                            @global-color;
+
+@panel-divider-gutter:                                @global-grid-gutter;
+@panel-divider-gutter-large:                          @global-grid-gutter-large;
+@panel-divider-border:                                @global-border;
+
+//
+// New
+//
+
+@panel-box-shadow-horizontal:                         0;
+@panel-box-shadow-vertical:                           5px;
+@panel-box-shadow-blur:                               8px;
+@panel-box-shadow-spread:                             0;
+@panel-box-shadow-color:                              rgba(160,166,168,0.35);
+@panel-box-shadow-hover-color:                        rgba(160,166,168,0.35);
+
+@panel-box-background-image:                          url('@{global-image-path}/@{global-style}/panel-background.png');
+@panel-box-border-radius:                             @global-border-radius;
+@panel-box-header-background:                         @global-muted-background;
+@panel-box-header-badge-title-padding-right:          100px;
+
+@panel-box-primary-button-color:                      @global-contrast-color;
+@panel-box-primary-button-background:                 @global-light-background;
+@panel-box-primary-link-color:                        darken(@global-primary-color, 20%);
+@panel-box-primary-link-hover-color:                  @global-contrast-color;
+
+@panel-box-primary-button-box-shadow-horizontal:      0;
+@panel-box-primary-button-box-shadow-vertical:        4px;
+@panel-box-primary-button-box-shadow-blur:            8px;
+@panel-box-primary-button-box-shadow-spread:          0;
+@panel-box-primary-button-box-shadow-color:           rgba(73,178,195,0.6);
+@panel-box-primary-button-hover-box-shadow-color:     rgba(73,178,195,1);
+
+@panel-box-primary-button-primary-background:         darken(@global-primary-background, 10%);
+@panel-box-primary-button-primary-hover-background:   darken(@global-primary-background, 15%);
+@panel-box-primary-button-color:                      @global-color;
+@panel-box-primary-button-hover-color:                @global-muted-color;
+@panel-box-primary-button-primary-color:              @global-contrast-color;
+@panel-box-primary-badge-color:                       fade(@global-contrast-color, 65%);
+
+@panel-box-secondary-header-title-color:              @global-contrast-color;
+@panel-box-secondary-header-title-background:         @global-dark-background;
+
+@panel-box-secondary-button-box-shadow-horizontal:    0;
+@panel-box-secondary-button-box-shadow-vertical:      4px;
+@panel-box-secondary-button-box-shadow-blur:          8px;
+@panel-box-secondary-button-box-shadow-spread:        0;
+@panel-box-secondary-button-box-shadow-color:         rgba(56,57,61,0.6);
+@panel-box-secondary-button-hover-box-shadow-color:   rgba(56,57,61,1);
+
+@panel-box-secondary-link-color:                      @global-link-color;
+@panel-box-secondary-link-hover-color:                @global-contrast-color;
+@panel-box-secondary-link-focus-color:                darken(@global-contrast-color, 15%);
+@panel-box-secondary-button-color:                    @global-color;
+@panel-box-secondary-button-hover-color:              @global-muted-color;
+@panel-box-secondary-button-background:               @global-light-background;
+@panel-box-secondary-button-hover-background:         darken(@global-light-background, 5%);
+@panel-box-secondary-button-primary-color:            @global-contrast-color;
+@panel-box-secondary-button-primary-hover-color:      @global-contrast-color;
+@panel-box-secondary-button-primary-background:       @global-primary-background;
+@panel-box-secondary-button-primary-hover-background: darken(@global-primary-background, 15%);
+
+@panel-box-panel-box-background-color:                @panel-box-background;
+
+// Sub-object: `uk-panel-title`
+// ========================================================================
+
+.hook-panel-title() {}
+
+
+// Sub-object: `uk-panel-badge`
+// ========================================================================
+
+.hook-panel-badge() {}
+
+
+// Modifier: `uk-panel-box`
+// ========================================================================
+
+.hook-panel-box() {
+    overflow: hidden;
+    background: @panel-box-background @panel-box-background-image 0 0 repeat;
+    border-radius: @panel-box-border-radius;
+    box-shadow: @panel-box-shadow-horizontal @panel-box-shadow-vertical @panel-box-shadow-blur @panel-box-shadow-spread @panel-box-shadow-color;
+}
+
+.hook-panel-box-hover() {}
+
+//
+// Sub-modifier: `uk-panel-box-primary`
+//
+
+.hook-panel-box-primary() {
+
+    background: @panel-box-primary-background;
+
+    .uk-button {
+
+        background-color: @panel-box-primary-button-background;
+        box-shadow: @panel-box-primary-button-box-shadow-horizontal @panel-box-primary-button-box-shadow-vertical @panel-box-primary-button-box-shadow-blur @panel-box-primary-button-box-shadow-spread @panel-box-primary-button-box-shadow-color;
+        color: @panel-box-primary-button-color;
+
+        &:hover {
+            background-color: @panel-box-primary-button-background;
+            box-shadow: @panel-box-primary-button-box-shadow-horizontal @panel-box-primary-button-box-shadow-vertical @panel-box-primary-button-box-shadow-blur @panel-box-primary-button-box-shadow-spread @panel-box-primary-button-hover-box-shadow-color;
+            color: @panel-box-primary-button-hover-color;
+        }
+
+        &:active,
+        &:focus {
+            background-color: @panel-box-primary-button-background;
+            box-shadow: @panel-box-primary-button-box-shadow-horizontal @panel-box-primary-button-box-shadow-vertical @panel-box-primary-button-box-shadow-blur @panel-box-primary-button-box-shadow-spread @panel-box-primary-button-hover-box-shadow-color;
+            color: @panel-box-primary-button-hover-color;
+        }
+
+    }
+
+    .uk-button-primary {
+        background-color: @panel-box-primary-button-primary-background;
+        box-shadow: none;
+        color: @panel-box-primary-button-primary-color;
+
+        &:hover,
+        &:active,
+        &:focus {
+            box-shadow: none;
+            background-color: @panel-box-primary-button-primary-hover-background;
+            color: @panel-box-primary-button-primary-color;
+        }
+
+    }
+
+    .uk-panel-badge { color: @panel-box-primary-badge-color; }
+
+}
+
+.hook-panel-box-primary-hover() {}
+
+//
+// Sub-modifier: `uk-panel-box-secondary`
+//
+
+.hook-panel-box-secondary() {
+
+    background-image: none;
+
+    a { color: @panel-box-secondary-link-color; }
+
+    a:hover { color: @panel-box-secondary-link-hover-color; }
+    a:focus { color: @panel-box-secondary-link-focus-color; }
+
+    .uk-button {
+        background-color: @panel-box-secondary-button-background;
+        box-shadow: @panel-box-secondary-button-box-shadow-horizontal @panel-box-secondary-button-box-shadow-vertical @panel-box-secondary-button-box-shadow-blur @panel-box-secondary-button-box-shadow-spread @panel-box-secondary-button-box-shadow-color;
+        color: @panel-box-secondary-button-color;
+    }
+
+    .uk-button:hover,
+    .uk-button:active,
+    .uk-button:focus {
+        background-color: @panel-box-secondary-button-hover-background;
+        color: @panel-box-secondary-button-hover-color;
+        box-shadow: @panel-box-secondary-button-box-shadow-horizontal @panel-box-secondary-button-box-shadow-vertical @panel-box-secondary-button-box-shadow-blur @panel-box-secondary-button-box-shadow-spread @panel-box-secondary-button-box-shadow-color;
+    }
+
+    .uk-button-primary {
+        background-color: @panel-box-secondary-button-primary-background;
+        color: @panel-box-secondary-button-primary-color; }
+
+    .uk-button-primary:hover,
+    .uk-button-primary:active,
+    .uk-button-primary:focus {
+        box-shadow: none;
+        background-color: @panel-box-secondary-button-primary-hover-background;
+        color: @panel-box-secondary-button-primary-hover-color;
+    }
+
+}
+
+.hook-panel-box-secondary-hover() {}
+
+
+// Modifier: `uk-panel-hover`
+// ========================================================================
+
+.hook-panel-hover() {
+
+    .uk-panel-title { color: @panel-hover-color;}
+}
+
+.hook-panel-hover-hover() {
+
+    box-shadow: @panel-box-shadow-horizontal @panel-box-shadow-vertical @panel-box-shadow-blur @panel-box-shadow-spread @panel-box-shadow-hover-color;
+
+    .uk-panel-title { color: @panel-hover-hover-color;}
+
+}
+
+
+// Modifier: `uk-panel-header`
+// ========================================================================
+
+.hook-panel-header() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-panel-misc() {
+
+    .uk-panel.uk-panel-box-primary {
+
+        a:not([class]),
+        .uk-link {
+            color: @panel-box-primary-link-color;
+            text-decoration: none;
+
+            &:hover {
+                color: @panel-box-primary-link-hover-color;
+                text-decoration: none;
+            }
+        }
+
+    }
+
+    .uk-grid-collapse .uk-panel-box .uk-panel-teaser > div { border-radius: 0; }
+    .uk-grid-collapse .uk-panel-box { border-radius: 0; }
+
+    .uk-grid-collapse > div:last-child .uk-panel-box { border-radius: 0 @panel-box-border-radius @panel-box-border-radius 0; }
+    .uk-grid-collapse > div:first-child .uk-panel-box { border-radius: @panel-box-border-radius 0 0 @panel-box-border-radius; }
+    .uk-grid-collapse > div:first-child .uk-panel-teaser > div { border-radius: @panel-box-border-radius 0 0 0; }
+    .uk-grid-collapse > div:last-child .uk-panel-teaser > div { border-radius: 0 @panel-box-border-radius 0 0; }
+
+    .uk-panel-box.uk-panel-header .uk-panel-title {
+        background-color: @panel-box-header-background;
+        border-radius: @panel-box-border-radius @panel-box-border-radius 0 0;
+        padding: @panel-box-padding/2 @panel-box-padding;
+        margin-top: -@panel-box-padding;
+        margin-bottom: @panel-box-padding;
+        margin-right: -@panel-box-padding;
+        margin-left:-@panel-box-padding;
+    }
+
+    .uk-panel-teaser { margin-bottom: @panel-box-padding; }
+
+    .uk-panel-teaser > div { border-radius: @panel-box-border-radius @panel-box-border-radius 0 0; }
+
+    .uk-panel-header .uk-panel-teaser > div { border-radius: 0; }
+
+    .uk-panel-header .uk-panel-teaser .uk-panel-title {
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .uk-panel-box-primary.uk-panel-header .uk-panel-title {
+        background-color: @global-light-background;
+        color: @global-color;
+        margin-bottom: @panel-box-padding;
+    }
+
+    .uk-panel-box-secondary.uk-panel-header .uk-panel-title {
+        background-color: @panel-box-secondary-header-title-background;
+        color: @panel-box-secondary-header-title-color;
+        margin-bottom: @panel-box-padding;
+    }
+
+    //
+    // Panel badge
+    //
+
+    .uk-panel:not(.uk-panel-header) .uk-panel-badge { position: relative; }
+
+    .uk-panel-header .uk-panel-badge {
+        top: @panel-box-padding/2;
+        right: @panel-box-padding;
+        line-height: @panel-title-line-height;
+    }
+
+    .uk-panel-header .uk-panel-badge + .uk-panel-title { padding-right: @panel-box-header-badge-title-padding-right; }
+
+    //
+    // Panel-box on panel-box
+    //
+
+    .tm-article-box .uk-panel-box:not(.uk-panel-box-primary):not(.uk-panel-box-secondary),
+    .uk-panel-box .uk-panel-box:not(.uk-panel-box-primary):not(.uk-panel-box-secondary) { background-color: @panel-box-panel-box-background-color; }
+
+}

@@ -1,0 +1,211 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Tab component
+//
+// ==========================================================================
+
+
+// Variables
+// ========================================================================
+
+@tab-border:                                @global-border;
+@tab-padding-horizontal:                    0;
+@tab-color:                                 @global-link-color;
+@tab-hover-border:                          @global-color;
+@tab-hover-background:                      rgba(0,0,0,0);
+@tab-hover-color:                           @global-link-hover-color;
+@tab-active-border:                         @global-color;
+@tab-active-background:                     rgba(0,0,0,0);
+@tab-active-color:                          @global-color;
+@tab-disabled-color:                        @global-muted-color;
+
+//
+// New
+//
+
+@tab-font-family:                           @global-small-font-family;
+@tab-font-weight:                           @global-small-font-weight;
+@tab-font-size:                             @global-small-font-size;
+
+
+// Component
+// ==========================================================================
+
+//
+// Items
+//
+
+.hook-tab() {
+
+    border-width: 0;
+    border-bottom-width: 1px;
+    text-transform: uppercase;
+    font-family: @tab-font-family;
+    font-weight: @tab-font-weight;
+    font-size: @tab-font-size;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: transparent;
+    }
+
+}
+
+// Hover
+.hook-tab-hover() {
+
+    &:after { background: @tab-hover-border; }
+
+}
+
+// Active
+.hook-tab-active() { 
+
+    border-bottom-width: 0; 
+
+    &:after {
+        bottom: -1px;
+        background: @tab-active-border; 
+    }
+
+}
+
+// Disabled
+.hook-tab-disabled() {
+
+    &:after { background: transparent; }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-tab-misc() {
+
+    /*
+     * Items
+     */
+
+    .uk-tab > li:nth-child(n+2) > a { margin-left: 15px; }
+
+    .uk-tab > li:nth-child(n+2) > a:hover,
+    .uk-tab > li.uk-active:nth-child(n+2) > a, { 
+
+        &:after { left: 15px; }
+
+    }
+
+
+    /* Modifier: 'tab-flip'
+     ========================================================================== */
+
+    .uk-tab-flip > li:nth-child(n+2) > a {
+        margin-right: 15px;
+        margin-left: 0;
+    }
+
+    .uk-tab-flip > li:nth-child(n+2) > a:hover,
+    .uk-tab-flip > li.uk-active:nth-child(n+2) > a, { 
+
+        &:after {
+            right: 15px;
+            left: 0;
+        }
+
+    }
+
+
+    /* Modifier: 'tab-bottom'
+     ========================================================================== */
+
+    .uk-tab-bottom > li > a {
+
+        border-width: 0;
+
+        &:after{
+            top: 0;
+            bottom: auto;
+        }
+
+    }
+
+
+    /* Modifier: 'tab-left', 'tab-right'
+     ========================================================================== */
+
+    /* Only tablets and desktops */
+    @media (min-width: @breakpoint-medium) {
+
+        .uk-tab-left > li > a,
+        .uk-tab-right > li > a { padding: 0 @tab-padding-horizontal; }
+
+        .uk-tab-left > li:nth-child(n+2) > a,
+        .uk-tab-right > li:nth-child(n+2) > a { margin-left: 0; }
+
+        /*
+         * Modifier: 'tab-left'
+         */
+
+        .uk-tab-left { border-right: 1px solid @tab-border; }
+
+        .uk-tab-left > li > a { 
+
+            border-width: 0;
+
+            &:after {
+                top: 0;
+                bottom: 0 !important;
+                left: auto !important;
+                width: 2px;
+                height: auto;
+                background: transparent;
+            }
+
+        }
+
+        .uk-tab-left > li:not(.uk-active) > a:hover,
+        .uk-tab-left > li:not(.uk-active) > a:focus { 
+            margin-right: 0;
+            padding-bottom: 0;
+        }
+
+        /*
+         * Modifier: 'tab-right'
+         */
+
+        .uk-tab-right { border-left: 1px solid @tab-border; }
+
+        .uk-tab-right > li > a {
+
+            padding-left: 15px;
+            border-width: 0;
+            
+            &:after {
+                top: 0;
+                bottom: 0 !important;
+                right: auto !important;
+                left: 0 !important;
+                width: 2px;
+                height: auto;
+                background: transparent;
+            }
+
+        }
+
+        .uk-tab-right > li:not(.uk-active) > a:hover,
+        .uk-tab-right > li:not(.uk-active) > a:focus { 
+            padding-bottom: 0; 
+            margin-left: 0; 
+        }
+
+    }
+
+}

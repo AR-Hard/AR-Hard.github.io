@@ -1,0 +1,53 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Form advanced
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@form-advanced-size:                          16px;
+@form-advanced-border:                        rgba(0,0,0,0);
+@form-advanced-border-width:                  0;
+@form-advanced-margin-top:                    -4px;
+@form-advanced-color:                         @global-dark-background;
+
+@form-advanced-checked-color:                 @global-primary-color;
+
+@form-advanced-radio-size:                    8px;
+
+@form-advanced-checkbox-icon:                 "\f00c";
+@form-advanced-checkbox-font-size:            12px;
+
+@form-advanced-disabled-border:               @global-border;
+@form-advanced-disabled-color:                rgba(255,255,255,0.2);
+
+//
+// New
+//
+
+@form-advanced-inner-shadow:                  rgba(0,0,0,0.04);
+@form-advanced-drop-shadow:                   rgba(255,255,255,0.03);
+
+
+// Component
+// ========================================================================
+
+.hook-form-advanced() { box-shadow: inset 0 0 0 1px @form-advanced-inner-shadow, inset 1px 2px 2px @form-advanced-inner-shadow, 1px 1px 1px @form-advanced-drop-shadow; }
+
+.hook-form-advanced-checked() { }
+
+.hook-form-advanced-radio() {}
+
+.hook-form-advanced-checkbox() {}
+
+.hook-form-advanced-disabled() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-form-advanced-misc() {}

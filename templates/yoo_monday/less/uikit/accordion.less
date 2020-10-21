@@ -1,0 +1,56 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Accordion
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+@accordion-title-margin-bottom:                 @global-margin-large;
+@accordion-title-padding-horizontal:            @global-margin-large;
+@accordion-title-font-size:                     round((@global-font-size * 0.8)); // 12px
+@accordion-title-line-height:                   round((@accordion-title-font-size * 1.166)); // 14px
+@accordion-title-background:                    rgba(0,0,0,0);
+
+//
+// New
+//
+
+@accordion-title-border-width:                  @global-border-width;
+@accordion-title-border-bottom:                 @global-border;
+@accordion-title-font-weight:                   @global-alt-font-weight;
+@accordion-title-text-transform:                @global-text-transform;
+@accordion-title-letter-spacing:                @global-letter-spacing;
+
+
+// Component
+// ========================================================================
+
+.hook-accordion() {}
+
+
+// Modifier: `uk-accordion-title`
+// ========================================================================
+
+.hook-accordion-title() {
+    border-bottom: @accordion-title-border-width solid @accordion-title-border-bottom;
+    font-weight: @accordion-title-font-weight;
+    text-transform: @accordion-title-text-transform;
+    letter-spacing: @accordion-title-letter-spacing;
+}
+
+
+// Modifier: `uk-accordion-content`
+// ========================================================================
+
+.hook-accordion-content() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-accordion-misc() {}

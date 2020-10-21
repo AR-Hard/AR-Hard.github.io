@@ -1,0 +1,72 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Slidenav
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@slidenav-width:                                50px;
+@slidenav-height:                               50px;
+
+@slidenav-color:                                @global-color;
+@slidenav-font-size:                            @global-font-size;
+@slidenav-previous-icon:                        '\e902';
+@slidenav-next-icon:                            '\e901';
+
+@slidenav-hover-color:                          @global-muted-color;
+
+@slidenav-active-color:                         @global-muted-color;
+
+@slidenav-position-previous:                    10px;
+@slidenav-position-next:                        @slidenav-position-previous;
+
+@slidenav-contrast-color:                       @global-contrast-color;
+@slidenav-contrast-hover-color:                 fade(@global-contrast-color, 40%);
+@slidenav-contrast-active-color:                @global-contrast-color;
+
+//
+// New
+//
+
+@slidenav-background:                            @global-muted-background;
+
+
+// Component
+// ========================================================================
+
+.hook-slidenav() { background: @slidenav-background; }
+
+.hook-slidenav-hover() {}
+
+.hook-slidenav-active() {}
+
+.hook-slidenav-contrast() { background: rgba(0,0,0,0); }
+
+.hook-slidenav-contrast-hover() {}
+
+.hook-slidenav-contrast-active() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-slidenav-misc() {
+
+    .uk-slidenav-next { margin-left: -4px; }
+
+    .uk-slidenav-previous:before,
+    .uk-slidenav-next:before { font-family: @global-icon-font-family; }
+
+    // Switching icons for RTL languages
+    html[dir="rtl"] body {
+
+        .uk-slidenav-previous::before { content: @slidenav-next-icon; }
+        .uk-slidenav-next::before { content: @slidenav-previous-icon; }
+
+    }
+
+}

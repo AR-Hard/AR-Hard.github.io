@@ -1,0 +1,69 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Datepicker
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@datepicker-nav-margin-bottom:                  @global-margin;
+@datepicker-nav-color:                          @global-color;
+@datepicker-nav-hover-color:                    @global-highlight-color;
+
+@datepicker-table-color:                        @global-color;
+
+@datepicker-table-hover-background:             @global-default-hover-background;
+@datepicker-table-hover-color:                  @global-highlight-color;
+@datepicker-table-onclick-background:           @global-primary-background;
+@datepicker-table-onclick-color:                @global-contrast-color;
+
+@datepicker-table-active-background:            @global-primary-background;
+@datepicker-table-active-color:                 @global-contrast-color;
+
+@datepicker-table-muted-color:                  @global-muted-color;
+
+//
+// New
+//
+
+@datepicker-text-shadow:                        @global-text-shadow;
+
+@datepicker-primary-gradient-top:               @global-primary-gradient-top;
+@datepicker-primary-gradient-bottom:            @global-primary-gradient-bottom;
+
+
+// Component
+// ========================================================================
+
+.hook-datepicker-nav() {}
+
+.hook-datepicker-nav-item() {}
+
+.hook-datepicker-table-item() {
+    border-radius: @global-border-radius;
+    background-origin: border-box;
+    text-align: center;
+}
+
+.hook-datepicker-table-item-hover() { text-shadow: 0 1px 0 @datepicker-text-shadow; }
+
+.hook-datepicker-table-item-onclick() {
+    background-image: none;
+    box-shadow: inset 1px 1px 0 @global-default-highlight;
+}
+
+.hook-datepicker-table-item-active() {
+    background-origin: border-box;
+    background-image: -webkit-linear-gradient(top, @datepicker-primary-gradient-top, @datepicker-primary-gradient-bottom);
+    background-image: linear-gradient(to bottom, @datepicker-primary-gradient-top, @datepicker-primary-gradient-bottom);
+    text-shadow: 1px 1px 1px @datepicker-text-shadow;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-datepicker-misc() {}

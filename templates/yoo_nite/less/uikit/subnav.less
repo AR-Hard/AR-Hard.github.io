@@ -1,0 +1,84 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Subnav
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@subnav-margin-horizontal:                      12px;
+
+@subnav-color:                                  @global-color;
+@subnav-hover-color:                            @global-link-color;
+@subnav-active-color:                           @global-link-color;
+
+@subnav-line-border:                            @global-border;
+@subnav-line-border-width:                      @global-border-width;
+
+@subnav-pill-hover-background:                  @global-highlight-background;
+@subnav-pill-hover-color:                       @global-highlight-color;
+@subnav-pill-active-background:                 @global-primary-background;
+@subnav-pill-active-color:                      @global-primary-color;
+
+@subnav-disabled-color:                         @global-muted-color;
+
+//
+// New
+//
+
+@subnav-font-size:                              round((@global-font-size * 0.86)); // 13px
+@subnav-text-transform:                         @global-text-transform;
+
+@subnav-pill-border-radius:                     @global-border-radius;
+
+
+// Component
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-subnav() {
+    font-size: @subnav-font-size;
+    text-transform: @subnav-text-transform;
+}
+
+// Hover
+.hook-subnav-hover() {}
+
+// Active
+.hook-subnav-active() {}
+
+
+// Modifier: `uk-subnav-line'
+// ========================================================================
+
+.hook-subnav-line-divider() {}
+
+
+// Modifier: `uk-subnav-pill'
+// ========================================================================
+
+.hook-subnav-pill() { border-radius: @subnav-pill-border-radius; }
+
+// Hover
+.hook-subnav-pill-hover() {}
+
+// Active
+.hook-subnav-pill-active() {}
+
+
+// Disabled state
+// ========================================================================
+
+.hook-subnav-disabled() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-subnav-misc() {}

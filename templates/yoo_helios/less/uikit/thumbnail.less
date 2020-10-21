@@ -1,0 +1,76 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Thumbnail
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@thumbnail-padding:                             8px;
+@thumbnail-border-width:                        0;
+@thumbnail-border:                              rgba(0,0,0,0);
+@thumbnail-background:                          @global-light-background;
+@thumbnail-hover-border:                        @thumbnail-border;
+@thumbnail-hover-background:                    @global-highlight-background;
+
+@thumbnail-caption-color:                       @global-color;
+
+//
+// New
+//
+
+@thumbnail-border-radius:                       @global-border-radius;
+
+@thumbnail-active-background:                   @global-highlight-background;
+@thumbnail-active-border:                       @global-primary-background;
+@thumbnail-active-shadow-width:                 @global-border-width;
+@thumbnail-active-shadow:                       @global-primary-background;
+@thumbnail-active-color:                        @global-highlight-color;
+
+@thumbnail-caption-font-size:                   13px;
+@thumbnail-caption-text-transform:              @global-text-transform;
+@thumbnail-caption-letter-spacing:              @global-letter-spacing;
+
+
+// Component
+// ========================================================================
+
+.hook-thumbnail() {
+    border-radius: @thumbnail-border-radius;
+    box-shadow: inset 1px 1px 0 @global-default-highlight, 1px 1px 1px @global-default-shadow;
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+}
+
+.hook-thumbnail-hover() { box-shadow: inset 1px 1px 0 @global-default-highlight, 2px 2px 5px @global-default-shadow; }
+
+
+// Caption
+// ========================================================================
+
+.hook-thumbnail-caption() {
+    font-size: @thumbnail-caption-font-size;
+    text-transform: @thumbnail-caption-text-transform;
+    letter-spacing: @thumbnail-caption-letter-spacing;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-thumbnail-misc() {
+
+    // onclick event
+    a.uk-thumbnail {
+
+        &:active {
+            box-shadow: inset 0 0 0 @thumbnail-active-shadow-width @thumbnail-active-shadow, 2px 2px 5px @global-default-shadow;
+            color: @thumbnail-active-color;
+        }
+
+    }
+
+}

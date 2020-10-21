@@ -1,0 +1,92 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Subnav component
+//
+// ==========================================================================
+
+
+// Variables
+// ========================================================================
+
+@subnav-color:                                  @global-color;
+@subnav-hover-color:                            @global-link-color;
+@subnav-active-color:                           @global-link-color;
+
+@subnav-line-border:                            @global-border;
+
+@subnav-pill-hover-background:                  rgba(0,0,0,0);
+@subnav-pill-hover-color:                       @global-link-hover-color;
+@subnav-pill-active-background:                 rgba(0,0,0,0);
+@subnav-pill-active-color:                      @global-color;
+
+@subnav-disabled-color:                         @global-muted-color;
+
+//
+// New
+//
+
+@subnav-font-size:                              @global-small-font-size;
+@subnav-font-family:                            @global-small-font-family;
+@subnav-font-weight:                            @global-small-font-weight;
+
+@subnav-pill-hover-border:                      @global-border;
+@subnav-pill-active-border:                     @global-border;
+
+
+// Component
+// ==========================================================================
+
+//
+// Items
+//
+
+.hook-subnav() {}
+
+// Hover
+.hook-subnav-hover() {}
+
+// Active
+.hook-subnav-active() {}
+
+
+// Modifier: `uk-subnav-line'
+// ==========================================================================
+
+.hook-subnav-line-divider() {}
+
+
+// Modifier: `uk-subnav-pill'
+// ==========================================================================
+
+.hook-subnav-pill() {
+    border: 1px solid transparent;
+    -webkit-transition: color .2s ease-in-out, border-color .2s ease-in;
+    transition: color .2s ease-in-out, border-color .2s ease-in;
+}
+
+// Hover
+.hook-subnav-pill-hover() { border-color: @subnav-pill-hover-border; }
+
+// Active
+.hook-subnav-pill-active() { border-color: @subnav-pill-active-border; }
+
+
+// Disabled state
+// ========================================================================
+
+.hook-subnav-disabled() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-subnav-misc() {
+
+    .uk-subnav {
+        font-size: @subnav-font-size;
+        font-family: @subnav-font-family;
+        font-weight: @subnav-font-weight;
+    }
+
+}

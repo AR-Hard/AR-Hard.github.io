@@ -1,0 +1,55 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Alert component
+//
+// ===========================================================================
+
+// Variables
+// ========================================================================
+
+@alert-margin-vertical:                 @global-margin;
+@alert-background:                      @global-light-background;
+@alert-color:                           @global-color;
+@alert-success-background:              fade(@global-success-background, 90%);
+@alert-success-color:                   @global-color;
+@alert-warning-background:              fade(@global-warning-background, 95%);
+@alert-warning-color:                   @global-color;
+@alert-danger-background:               fade(@global-danger-background, 95%) ;
+@alert-danger-color:                    @global-color;
+
+//
+// New
+//
+
+@alert-border-radius:                   @global-border-radius;  
+
+
+// Component
+// ===========================================================================
+
+.hook-alert() { border-radius: @alert-border-radius; }
+
+
+// Modifier: `uk-alert-success`
+// ===========================================================================
+
+.hook-alert-success() {}
+
+
+// Modifier: `uk-alert-warning`
+// ===========================================================================
+
+.hook-alert-warning() {}
+
+
+// Modifier: `uk-alert-danger`
+// ===========================================================================
+
+.hook-alert-danger() {}
+
+
+// Miscellaneous
+// ===========================================================================
+
+.hook-alert-misc() {}

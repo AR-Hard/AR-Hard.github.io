@@ -1,0 +1,107 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Modal
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@modal-z-index:                                 @global-z-index + 10;
+@modal-background:                              fade(darken(@global-dark-background, 6%), 60%);
+
+@modal-dialog-padding:                          30px;
+@modal-dialog-background:                       @global-background;
+
+@modal-header-margin-bottom:                    @global-margin;
+@modal-footer-margin-top:                       @global-margin;
+
+@modal-caption-color:                           @global-contrast-color;
+
+//
+// New
+//
+
+@modal-border-width:                            1px;
+@modal-border:                                  darken(@modal-dialog-background, 1%);
+@modal-header-background:                       lighten(@modal-dialog-background, 2%);
+@modal-footer-background:                       @modal-header-background;
+
+@modal-close-size:                              42px;
+@modal-close-icon-size:                         24px;
+
+
+// Component
+// ========================================================================
+
+.hook-modal() {}
+
+
+// Sub-object: `uk-modal-dialog`
+// ========================================================================
+
+.hook-modal-dialog() {
+    border-radius: @global-border-radius;
+    box-shadow: inset 1px 1px 0 @global-default-highlight, 3px 3px 15px @global-default-shadow;
+}
+
+
+// Modifier: `uk-modal-dialog-lightbox`
+// ========================================================================
+
+.hook-modal-dialog-lightbox() { border-radius: 0; }
+
+
+// Sub-object: `uk-modal-header`
+// ========================================================================
+
+.hook-modal-header() {
+    margin: (-@modal-dialog-padding) (-@modal-dialog-padding) @modal-header-margin-bottom (-@modal-dialog-padding);
+    padding: @modal-dialog-padding;
+    border-bottom: @modal-border-width solid @modal-border;
+    border-radius: @global-border-radius @global-border-radius 0 0;
+    background: @modal-header-background;
+    box-shadow: inset 1px 1px 0 @global-default-highlight;
+}
+
+
+// Sub-object: `uk-modal-footer`
+// ========================================================================
+
+.hook-modal-footer() {
+    margin: @modal-footer-margin-top (-@modal-dialog-padding) (-@modal-dialog-padding) (-@modal-dialog-padding);
+    padding: @modal-dialog-padding;
+    border-top: @modal-border-width solid @modal-border;
+    border-radius: 0 0 @global-border-radius @global-border-radius;
+    background: @modal-header-background;
+}
+
+
+// Sub-object: `uk-modal-caption`
+// ========================================================================
+
+.hook-modal-caption() { text-shadow: 1px 1px 1px @global-text-shadow; }
+
+
+// Sub-object: `uk-modal-spinner`
+// ========================================================================
+
+.hook-modal-spinner() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-modal-misc() {
+
+    // Close icon size for uk-modal-blank
+    .uk-modal-dialog-blank .uk-modal-close {
+        width: @modal-close-size;
+        line-height: @modal-close-size;
+    }
+
+    .uk-modal-dialog-blank .uk-modal-close::after { font-size: @modal-close-icon-size; }
+
+}

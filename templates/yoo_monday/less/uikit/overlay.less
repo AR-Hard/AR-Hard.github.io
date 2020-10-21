@@ -1,0 +1,75 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Overlay
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@overlay-panel-color:                           @global-color;
+
+@overlay-panel-background:                      @global-light-background;
+
+@overlay-icon:                                  '\e900';
+@overlay-icon-size:                             40px;
+@overlay-icon-color:                            @global-color;
+
+@overlay-panel-link-color:                      @global-color;
+
+@overlay-area-icon-size:                        40px;
+@overlay-area-icon:                             '\e900';
+
+//
+// New
+//
+
+@overlay-button-background:                    @global-light-background;
+@overlay-icon-button-border:                   rgba(0, 0, 0, 0);
+@overlay-icon-button-color:                    @global-color;
+@overlay-icon-button-hover-background:         darken(@global-muted-background, 2%);
+@overlay-icon-button-border-width:             @global-border-width;
+
+
+// Sub-object `uk-overlay-panel`
+// ========================================================================
+
+.hook-overlay-panel() {}
+
+
+// Sub-object `uk-overlay-background`
+// ========================================================================
+
+.hook-overlay-background() {}
+
+
+// Sub-object `uk-overlay-image`
+// ========================================================================
+
+.hook-overlay-image() {}
+
+
+// Sub-object `uk-overlay-icon`
+// ========================================================================
+
+.hook-overlay-icon() { font-family: @global-icon-font-family; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-overlay-misc() {
+
+    .uk-overlay .uk-icon-button {
+        background: @global-muted-background;
+        border: @overlay-icon-button-border-width solid @overlay-icon-button-border;
+        color: @overlay-icon-button-color;
+
+        &:hover { background: @overlay-icon-button-hover-background; }
+    }
+
+    .uk-overlay .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger):not(:disabled):not(.uk-button-link) { background-color: @overlay-button-background; }
+
+}

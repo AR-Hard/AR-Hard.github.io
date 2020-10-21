@@ -1,0 +1,72 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Article
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@article-margin-top:                            @global-margin-large;
+
+@article-title-font-size:                       48px;
+@article-title-font-weight:                     @global-heading-font-weight;
+@article-title-line-height:                     54px;
+
+@article-meta-font-size:                        18px;
+@article-meta-line-height:                      22px;
+@article-meta-color:                            @global-muted-color;
+
+@article-lead-color:                            @global-color;
+@article-lead-font-size:                        18px;
+@article-lead-font-weight:                      @global-font-weight;
+@article-lead-line-height:                      28px;
+
+@article-divider-margin:                        @global-margin-large;
+@article-divider-border:                        @global-border;
+
+//
+// New
+//
+
+@article-border-width:                          @global-border-width;
+@article-border:                                @global-border;
+
+
+// Sub-object `uk-article-title`
+// ========================================================================
+
+.hook-article-title() {}
+
+
+// Sub-object `uk-article-meta`
+// ========================================================================
+
+.hook-article-meta() {}
+
+
+// Sub-object `uk-article-lead`
+// ========================================================================
+
+.hook-article-lead() {}
+
+
+// Sub-object `uk-article-divider`
+// ========================================================================
+
+.hook-article-divider() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-article-misc() {
+
+    .uk-article + .uk-article {
+        padding-top: @article-margin-top;
+        border-top: @article-border-width solid @article-border;
+    }
+
+}

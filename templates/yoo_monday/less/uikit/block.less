@@ -1,0 +1,100 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Block
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@block-padding-vertical:                        40px;
+@block-padding-vertical-large:                  80px;
+
+@block-large-padding-vertical-large:            140px;
+
+@block-default-background:                      @global-background;
+@block-muted-background:                        @global-muted-background;
+@block-primary-background:                      @global-primary-background;
+@block-secondary-background:                    @global-secondary-background;
+
+//
+// New
+//
+
+@block-panel-box-shadow-horizontal:             @panel-box-shadow-horizontal;
+@block-panel-box-shadow-vertical:               @panel-box-shadow-vertical;
+@block-panel-box-shadow-blur:                   @panel-box-shadow-blur;
+@block-panel-box-shadow-spread:                 @panel-box-shadow-spread;
+@block-secondary-panel-box-shadow-color:        rgba(50,50,55,0.6);
+@block-primary-panel-box-shadow-color:          rgba(50,130,150,0.5);
+
+@block-secondary-panel-background:              @panel-box-background;
+@block-secondary-panel-primary-background:      @panel-box-primary-background;
+@block-secondary-panel-secondary-background:    darken(@panel-box-secondary-background, 2%);
+@block-primary-panel-primary-background:        lighten(@global-primary-background, 2%);
+
+
+// Component
+// ========================================================================
+
+.hook-block() {}
+
+
+// Color modifier
+// ========================================================================
+
+.hook-block-default() {}
+
+.hook-block-muted() {}
+
+.hook-block-secondary() {
+
+    .uk-panel-box {
+        background-color: @block-secondary-panel-background;
+        box-shadow: @block-panel-box-shadow-horizontal @block-panel-box-shadow-vertical @block-panel-box-shadow-blur @block-panel-box-shadow-spread @block-secondary-panel-box-shadow-color;
+    }
+
+    .uk-panel-box-primary {
+        background-color: @block-secondary-panel-primary-background;
+        box-shadow: @block-panel-box-shadow-horizontal @block-panel-box-shadow-vertical @block-panel-box-shadow-blur @block-panel-box-shadow-spread @block-secondary-panel-box-shadow-color; }
+
+    .uk-panel-box-secondary {
+        background-color: @block-secondary-panel-secondary-background;
+        box-shadow: @block-panel-box-shadow-horizontal @block-panel-box-shadow-vertical @block-panel-box-shadow-blur @block-panel-box-shadow-spread @block-secondary-panel-box-shadow-color;
+    }
+
+}
+
+.hook-block-primary() {
+
+    &:extend(.uk-contrast all);
+
+    .uk-panel-box { box-shadow: @block-panel-box-shadow-horizontal @block-panel-box-shadow-vertical @block-panel-box-shadow-blur @block-panel-box-shadow-spread @block-primary-panel-box-shadow-color; }
+
+    .uk-panel-box-primary { box-shadow: @block-panel-box-shadow-horizontal @block-panel-box-shadow-vertical @block-panel-box-shadow-blur @block-panel-box-shadow-spread @block-primary-panel-box-shadow-color; }
+
+    .uk-panel-box-primary {
+        background-color: @block-primary-panel-primary-background;
+        box-shadow: @block-panel-box-shadow-horizontal @block-panel-box-shadow-vertical @block-panel-box-shadow-blur @block-panel-box-shadow-spread @block-primary-panel-box-shadow-color;
+    }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-block-misc() {
+
+    /*
+     * Adjust padding between equal colored blocks
+     */
+
+    .uk-block-default + .uk-block-default,
+    .uk-block-muted + .uk-block-muted,
+    .uk-block-primary + .uk-block-primary,
+    .uk-block-secondary + .uk-block-secondary { padding-top: 25px; }
+
+}

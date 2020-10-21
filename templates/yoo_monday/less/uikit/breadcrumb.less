@@ -1,0 +1,72 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+ //
+// Component: Breadcrumb
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@breadcrumb-font-size:                          round((@global-font-size * 0.812)); // 13px;
+
+@breadcrumb-disabled-color:                     @global-muted-color;
+@breadcrumb-divider:                            '//';
+@breadcrumb-divider-margin:                     @global-margin;
+@breadcrumb-disabled-color:                     lighten(@global-muted-color, 15%);
+
+//
+// New
+//
+
+@breadcrumb-color:                              @global-muted-color;
+@breadcrumb-hover-color:                        @global-color;
+@breadcrumb-active-color:                       @global-color;
+@breadcrumb-panel-box-color:                    @global-muted-color;
+@breadcrumb-panel-box-hover-color:              @global-color;
+@breadcrumb-panel-box-active-color:             @global-color;
+
+@breadcrumb-divider-color:                      @global-muted-color;
+@breadcrumb-text-transform:                     @global-text-transform;
+@breadcrumb-letter-spacing:                     @global-letter-spacing;
+@breadcrumb-font-family:                        @global-font-family;
+@breadcrumb-font-weight:                        @global-alt-font-weight;
+
+
+// Component
+// ========================================================================
+
+.hook-breadcrumb() {
+
+    font-weight: @breadcrumb-font-weight;
+    text-transform: @breadcrumb-text-transform;
+    letter-spacing: @breadcrumb-letter-spacing;
+
+    a { color: @breadcrumb-color; }
+
+    a:hover { color: @breadcrumb-hover-color; }
+
+    .uk-active > span { color: @breadcrumb-active-color; }
+}
+
+
+// Items
+// ========================================================================
+
+.hook-breadcrumb-divider() { color: @breadcrumb-divider-color; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-breadcrumb-misc() {
+
+    .tm-article-box .uk-breadcrumb,
+    .uk-panel-box .uk-breadcrumb {
+        a { color: @breadcrumb-panel-box-color; }
+        a:hover { color: @breadcrumb-panel-box-hover-color; }
+
+        .uk-active > span { color: @breadcrumb-panel-box-active-color; }
+    }
+}

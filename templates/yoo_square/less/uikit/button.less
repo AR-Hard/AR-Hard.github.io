@@ -1,0 +1,223 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Button component
+//
+// ===========================================================================
+
+// Variables
+// ========================================================================
+
+@button-height:                             @global-height;
+@button-mini-height:                        @global-mini-height;
+@button-small-height:                       @global-small-height;
+@button-large-height:                       @global-large-height;
+@button-line-height:                        @global-height;
+@button-mini-line-height:                   @global-mini-height;
+@button-small-line-height:                  @global-small-height;
+@button-large-line-height:                  @global-large-height;
+@button-mini-font-size:                     round((@global-font-size * 0.78));
+@button-small-font-size:                    round((@global-font-size * 0.85));
+@button-large-font-size:                    round((@global-font-size * 1.14));
+@button-padding-horizontal:                 25px;
+@button-mini-padding-horizontal:            8px;
+@button-small-padding-horizontal:           9px;
+@button-large-padding-horizontal:           30px;
+@button-background:                         rgba(0,0,0,0);
+@button-color:                              @global-color;
+@button-hover-background:                   @global-light-hover-background;
+@button-hover-color:                        @global-link-hover-color;
+@button-active-background:                  @button-hover-background;
+@button-active-color:                       @button-color;
+@button-primary-background:                 @global-primary-background;
+@button-primary-color:                      @global-contrast-color;
+@button-primary-hover-background:           #2E2E2E;
+@button-primary-hover-color:                #fff;
+@button-primary-active-background:          @button-primary-hover-background;
+@button-primary-active-color:               @button-primary-hover-color;
+@button-success-background:                 @global-success-background;
+@button-success-color:                      @global-color;
+@button-success-hover-background:           lighten(@button-success-background, 12%);
+@button-success-hover-color:                lighten(@button-success-color, 10%);
+@button-success-active-background:          @button-success-hover-background;
+@button-success-active-color:               @button-success-color;
+@button-danger-background:                  @global-danger-background;
+@button-danger-color:                       @global-color;
+@button-danger-hover-background:            saturate(lighten(@button-danger-background, 10%), 30%);
+@button-danger-hover-color:                 lighten(@button-danger-color, 10%);
+@button-danger-active-background:           @button-danger-hover-background;
+@button-danger-active-color:                @button-danger-color;
+@button-disabled-background:                @button-background;
+@button-disabled-color:                     @global-muted-color;
+@button-link-color:                         @global-link-color;
+@button-link-hover-color:                   @global-link-hover-color;
+@button-link-disabled-color:                @global-muted-color;
+
+
+//
+// New
+//
+
+@button-border-width:                       @global-small-border-width;
+@button-border-style:                       solid;
+@button-border:                             @global-border;
+@button-border-radius:                      @global-border-radius;
+@button-font-weight:                        400;
+@button-hover-border:                       @global-hover-border;
+@button-primary-border-radius:              @global-small-border-radius;
+@button-group-padding-horizontal:           15px;
+@button-disabled-border:                    fade(@global-border, 20%);
+
+
+// Component
+// ===========================================================================
+
+.hook-button() {
+    position: relative;
+    border: @button-border-width @button-border-style @button-border;
+    border-radius: @button-border-radius;
+    font-weight: @button-font-weight;
+}
+
+.hook-button-hover() {
+    border-color: @button-hover-border;
+    -webkit-transition: background-color .10s ease-in-out, border-color .2s ease-in;
+    transition: background-color .10s ease-in-out, border-color .2s ease-in;
+
+}
+
+.hook-button-active() {
+    top: 1px;
+    border-color: @button-hover-border;
+}
+
+
+// Color modifiers
+// ===========================================================================
+
+//
+// Modifier: `uk-button-primary`
+//
+
+.hook-button-primary() {
+    border-color: transparent;
+    border-radius: @button-primary-border-radius;
+}
+
+.hook-button-primary-hover() { border-color: transparent; }
+
+.hook-button-primary-active() {
+    top: 1px;
+    border-color: transparent;
+}
+
+//
+// Modifier: `uk-button-success`
+//
+
+.hook-button-success() {
+    border-color: transparent;
+    border-radius: @button-primary-border-radius;
+}
+
+.hook-button-success-hover() { border-color: transparent; }
+
+.hook-button-success-active() {
+    top: 1px;
+    border-color: transparent;
+}
+
+//
+// Modifier: `uk-button-danger`
+//
+
+.hook-button-danger() {
+    border-color: transparent;
+    border-radius: @button-primary-border-radius;
+}
+
+.hook-button-danger-hover() { border-color: transparent; }
+
+.hook-button-danger-active() {
+    top: 1px;
+    border-color: transparent;
+}
+
+
+// Disabled state
+// ===========================================================================
+
+.hook-button-disable() {
+    top: 0;
+    border: @button-border-width @button-border-style @button-disabled-border;
+}
+
+
+// Modifier: `uk-button-link`
+// ===========================================================================
+
+.hook-button-link() { box-shadow: none; }
+
+
+// Size modifiers
+// ===========================================================================
+
+.hook-button-large() { border-radius: @global-border-radius; }
+
+
+// Miscellaneous
+// ===========================================================================
+
+.hook-button-misc() {
+
+    .uk-button-link:disabled { text-decoration: none; }
+
+    /* Sub-object `uk-button-group`
+     =================================================================== */
+
+    .uk-button-group > .uk-button,
+    .uk-button-group a.uk-button,
+    .uk-button-group button.uk-button { padding: 0 @button-group-padding-horizontal !important; }
+
+    /*
+     * Reset border-radius
+     */
+
+    .uk-button-group > .uk-button:not(:first-child):not(:last-child),
+    .uk-button-group > div:not(:first-child):not(:last-child) .uk-button { border-radius: 0; }
+
+    .uk-button-group > .uk-button:first-child,
+    .uk-button-group > div:first-child .uk-button {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .uk-button-group > .uk-button:last-child,
+    .uk-button-group > div:last-child .uk-button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    /*
+     * Collapse border
+     */
+
+    .uk-button-group > .uk-button:not(.uk-button-success):not(.uk-button-primary):not(.uk-button-danger):nth-child(n+2),
+    .uk-button-group > div:nth-child(n+2) .uk-button:not(.uk-button-success):not(.uk-button-primary):not(.uk-button-danger) { border-left-width: 0; }
+
+    .uk-button-group > .uk-button:not(:disabled):not(.uk-button-success):not(.uk-button-primary):not(.uk-button-danger):nth-child(n+2):hover,
+    .uk-button-group > div:nth-child(n+2) .uk-button:not(:disabled):not(.uk-button-success):not(.uk-button-primary):not(.uk-button-danger):hover {
+        margin-left: -@button-border-width;
+        border-left: @button-border-width solid @button-hover-border;
+    }
+
+    /*
+     * Create position context to superimpose the successor elements border
+     * Known issue: If you use an `a` element as button and an icon inside,
+     * the active state will not work if you click the icon inside the button
+     * Workaround: Just use a `button` or `input` element as button
+    */
+
+    .uk-button-group .uk-button:hover { z-index: 2; }
+
+}

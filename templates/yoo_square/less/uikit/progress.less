@@ -1,0 +1,59 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Progress component
+//
+// ===========================================================================
+
+// Variables
+// ========================================================================
+
+@progress-margin-vertical:                      @global-margin;
+@progress-background:                           @global-light-background;
+@progress-bar-background:                       @global-primary-background;
+@progress-bar-font-size:                        11px;
+@progress-bar-color:                            fade(@global-contrast-color, 80%);
+@progress-bar-success-background:               @global-success-background;
+@progress-bar-warning-background:               @global-warning-background;
+@progress-bar-danger-background:                @button-danger-background;
+
+//
+// New 
+//
+
+@progress-border-radius:                        @global-border-radius;
+
+
+// Component
+// ===========================================================================
+
+.hook-progress() { border-radius: @progress-border-radius; }
+
+
+// Sub-object: `progress-bar`
+// ===========================================================================
+
+.hook-progress-bar() { font-weight: bold; }
+
+
+// Color modifiers
+// ===========================================================================
+
+.hook-progress-bar-success() {}
+
+.hook-progress-bar-warning() {}
+
+.hook-progress-bar-danger() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-progress-misc() {
+
+    .uk-progress-striped .uk-progress-bar {
+        background-image: -webkit-linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
+        background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
+    }
+
+}

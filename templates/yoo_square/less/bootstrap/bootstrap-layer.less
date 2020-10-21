@@ -1,0 +1,154 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@bs-input-height:           22px;
+@bs-control-input-height:   20px;
+@baseBorderRadius:          3px;
+@borderRadiusLarge:         6px;
+@borderRadiusSmall:         2px;
+
+
+/* Button overrides
+ ========================================================================== */
+
+.input-append .btn:nth-child(n+2),
+.input-prepend.input-append .btn:nth-child(n+2),
+.input-append > .btn-group .btn:nth-child(n+2),
+.btn-group:not(.btn-group-vertical) .btn:nth-child(n+2) {
+    margin-left: 0;
+    border-left-width: 0;
+}
+
+.input-append .btn:nth-child(n+2):hover,
+.input-prepend.input-append .btn:nth-child(n+2):hover,
+.input-append > .btn-group .btn:nth-child(n+2):hover,
+.btn-group:not(.btn-group-vertical) .btn:nth-child(n+2):hover,
+.btn-group.open .btn.dropdown-toggle:nth-child(n+2){
+    margin-left: -@button-border-width;
+    border-left: @button-border-width solid @button-hover-border;
+}
+
+.input-prepend .btn:first-child,
+.input-prepend > .btn-group:first-child .btn {
+    margin-right: 0 !important;
+    border-right-width: 0;
+}
+
+.input-prepend .btn:first-child:hover,
+.input-prepend > .btn-group:first-child .btn:hover {
+    margin-right: -@button-border-width !important;
+    border-right: @button-border-width solid @button-hover-border;
+    z-index: 1;
+}
+
+.btn-group-vertical .btn:nth-child(n+2) { 
+    margin-top: -@global-small-border-width;
+    border-top: none; 
+}
+
+
+/* Label overrides
+ ========================================================================== */
+
+// Reset border-radius
+.label, 
+.badge {
+    .border-radius(0);
+    text-transform: uppercase; 
+}
+
+
+/* Nav overrides
+ ========================================================================== */
+
+// LIST
+.nav-list > li > a,
+.nav-list .nav-header {
+  margin-left:  0;
+  margin-right: 0;
+  border: @global-border-width solid transparent;
+}
+
+.nav-list > li > a { padding: 5px 15px; }
+
+// TABS
+.nav-tabs { border-bottom-width: @global-small-border-width; }
+.nav-tabs > li { margin-bottom: -@global-small-border-width; }
+
+.nav-tabs > li > a { border-width: @global-small-border-width; }
+
+// Stacked tab navs
+.nav-tabs.nav-stacked > li > a { border-width: @global-small-border-width; }
+
+// Stacked tab navs reset border-top
+.nav-tabs.nav-stacked > li:nth-child(n+2) > a { border-top: none; }
+
+// Active state, and it's :hover/:focus to override normal :hover/:focus
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover,
+.nav-tabs > .active > a:focus { border-width: @global-small-border-width; }
+
+// Bottom
+.tabs-below > .nav-tabs { border-top-width: @global-small-border-width; }
+.tabs-below > .nav-tabs > li { margin-top: -@global-small-border-width; }
+
+// Tabs on the left
+.tabs-left > .nav-tabs { border-right-width: @global-small-border-width; }
+.tabs-left > .nav-tabs > li > a { margin-right: -@global-small-border-width; }
+
+// Tabs on the right
+.tabs-right > .nav-tabs { border-left-width: @global-small-border-width; }
+.tabs-right > .nav-tabs > li > a { margin-left: -@global-small-border-width; }
+
+// DROPDOWN
+.nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle,
+.nav > li.dropdown.open.active > a:hover,
+.nav > li.dropdown.open.active > a:focus {
+  color: @global-contrast-color;
+  background-color: @global-primary-background;
+  border-color: transparent;
+  font-weight: normal;
+
+  .caret { 
+    border-top-color: @global-contrast-color !important;
+    border-bottom-color: @global-contrast-color !important; 
+  }
+
+}
+
+// DIVDIER
+.nav-list .divider { border-bottom-width: @global-border-width; }
+
+
+/* Accordion overrides
+ ========================================================================== */
+
+.accordion-group { border-width: @global-small-border-width; }
+.accordion-inner { border-top-width: @global-small-border-width; }
+
+
+/* Thumbnail overrides
+ ========================================================================== */
+
+.thumbnail,
+.img-polaroid { border-width: @global-border-width; }
+
+
+/* Table overrides
+ ========================================================================== */
+
+.table { 
+    th,
+    td { border-top: none; }
+}
+
+.table-bordered { 
+    border: none; 
+    th,
+    td { border-left: none; }
+}
+
+/* Dropdown overrides
+ ========================================================================== */
+
+.dropdown-menu .divider { border-bottom-width: @global-border-width; }

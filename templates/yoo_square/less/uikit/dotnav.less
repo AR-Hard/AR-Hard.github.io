@@ -1,0 +1,67 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Dotnav
+//
+// ========================================================================
+
+
+
+// Variables
+// ========================================================================
+
+@dotnav-background:                             rgba(0,0,0,0);
+
+@dotnav-hover-background:                       rgba(0,0,0,0);
+@dotnav-onclick-background:                     rgba(0,0,0,0);
+@dotnav-active-background:                      rgba(0,0,0,0);
+
+@dotnav-contrast-background:                    rgba(0,0,0,0);
+@dotnav-contrast-hover-background:              rgba(0,0,0,0);
+@dotnav-contrast-onclick-background:            rgba(0,0,0,0);
+@dotnav-contrast-active-background:             rgba(0,0,0,0);
+
+//
+// New
+//
+
+@dotnav-border-width:                            @global-border-width;
+@dotnav-border:                                  @global-border;
+@dotnav-hover-border:                            @global-color;
+
+@dotnav-contrast-border:                         rgba(255,255,255,0.4);
+@dotnav-contrast-hover-border:                   rgba(255,255,255,1);
+
+// Component
+// ========================================================================
+
+.hook-dotnav-item() {
+    border: @dotnav-border-width solid @dotnav-border;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.hook-dotnav-item-hover() {
+    border-color: @dotnav-hover-border;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.hook-dotnav-item-onclick() {}
+
+.hook-dotnav-item-active() {}
+
+.hook-dotnav-contrast-item() { border-color: @dotnav-contrast-border; }
+
+.hook-dotnav-contrast-item-hover() { border-color: @dotnav-contrast-hover-border; }
+
+.hook-dotnav-contrast-item-onclick() {}
+
+.hook-dotnav-contrast-item-active() {}
+
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-dotnav-misc() {}

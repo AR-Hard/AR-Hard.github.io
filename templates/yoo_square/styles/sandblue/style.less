@@ -1,0 +1,114 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@import 'https://fonts.googleapis.com/css?family=Raleway:200';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,300';
+
+// Variables
+// ========================================================================
+
+//
+// Typography
+//
+
+@global-link-color: #fff1b9;
+@global-contrast-color: rgba(51, 56, 65, 0.95);
+@base-heading-font-family: 'Raleway';
+
+//
+// Border
+//
+
+@global-border: rgba(255, 255, 255, 0.5);
+@global-hover-border: rgb(224, 235, 235);
+
+//
+// Backgrounds
+//
+
+@global-background: #6bbdc6;
+@global-light-background: rgba(255, 255, 255, 0.2);
+@global-light-hover-background: rgba(255, 255, 255, 0.07);
+@global-secondary-background: #5da8af;
+@global-primary-background: #fff1b9;
+@global-success-background: #94debc;
+@global-warning-background: #f8a374;
+@global-danger-background: #fa7d6f;
+
+//
+// Badge
+//
+
+@badge-notification-color: fade(darken(@global-contrast-color, 20%), 75%);
+
+//
+// Base
+//
+
+@base-heading-font-family: 'Raleway';
+@base-em-color: #2a7076;
+@base-heading-font-weight: 200;
+@base-body-font-weight: 300;
+
+//
+// Button
+//
+
+@button-primary-hover-background: #2e353f;
+@button-danger-hover-background: saturate(lighten(@button-danger-background, 5%), 90%);
+@button-success-hover-background: saturate(lighten(@button-success-background, 5%), 5%);
+
+//
+// Dropdown
+//
+
+@dropdown-navbar-background: @global-contrast-color;
+@dropdown-search-background: @global-contrast-color;
+@dropdown-background: @global-contrast-color;
+@dropdown-border: @global-contrast-color;
+
+//
+// Form
+//
+
+@form-success-border: desaturate(fade(lighten(@button-success-background, 12%), 80%), 5%);
+@form-danger-border: desaturate(fade(lighten(@button-danger-background, 12%), 80%), 5%);
+@form-background: rgba(0,0,0,0);
+
+//
+// Offcanvas
+//
+
+@offcanvas-background: rgba(18, 54, 63, 0.7);
+
+//
+// Progress
+//
+
+@progress-bar-color: fade(darken(@global-contrast-color, 20%), 75%);
+
+//
+// Text
+//
+
+@text-primary-color: #def7fa;
+@text-success-color: #acebdd;
+@text-warning-color: #ffe8c5;
+@text-danger-color: #f7b5ae;
+
+
+// Theme Variables
+// ==========================================================================
+
+@theme_global-body-style: 'sandblue';
+
+// System Style
+@theme_system_color: #333841;
+@theme_system-link-color: #D8C371;
+@theme_system-link-hover-color: saturate(@theme_system-link-color, 30%);
+@theme_system-global-border: #75787E;
+@theme_system-button-color: #676A6F;
+
+
+// Color Scroll
+@theme_scroll-start-color:				@global-background;
+@theme_scroll-end-color: 				@global-background;
